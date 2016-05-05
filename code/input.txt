@@ -1,0 +1,1 @@
+select complexEvent from E1,E2 pattern SEQ(E1,E2) limit E1.password = 123
