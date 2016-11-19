@@ -1,0 +1,1 @@
+select complexEvent from zn1701,zn1702 pattern seq(repeat(zn1701,1),within(zn1702,10s)) limit zn1701.LastPrice > 100 and zn1702.LastPrice >100
