@@ -7,7 +7,8 @@ from Queue import Queue, Empty
 import time
 from cedlLimit import *
 class eventForest():
-    def __init__(self):
+    def __init__(self,cep2):
+        self.cep = cep2
         self.outputQueue = Queue()
         self.nodeIndex = {}
         self.id = 0
@@ -31,70 +32,97 @@ class eventForest():
 
         #访问非叶子节点，生成新的实例
         if (node.op != '-1')&(node.op!=None):#根节点的op为None,叶子节点的op为-1
-            op = operator()
-            newInstances = op.handler(node)
+            op = operator(self.cep)
+            newInstances = op.handler(node,child)
             if newInstances !=None:
                 limit = check()
                 for item in newInstances:
                    if limit.checks(node,item):#若满足该节点的约束条件，则加入
                      node.instances.append(item)
+    '''
+    将以node为根结点的事件树添加到事件森林中，在添加事件树的过程中，进行事件树共享的处理
 
-    def insertIndex(self,node):
+    '''
+    def insertIndex(self,node,isShare):
         #process root node
         #print 'dfdfd',node.eTypeId
 
-        for child in node.children:
-            self.insertIndex(child)
 
+        for child in node.children:
+            self.insertIndex(child,isShare)
+        #print node.eTypeId,'eeee'
+        #将根结点直接添加到森林中
         if str(node.eTypeId) == 'root':
+            #print node.eTypeId,'no share',self.id
             node.id = self.id
             self.id+=1
+            '''
+            #同一类操作放到同一个集合中
             if self.nodeIndex.has_key(node.eTypeId):
                 self.nodeIndex[node.eTypeId].append(node)
             else:
                 self.nodeIndex[node.eTypeId]=[node]
-
+                '''
+            self.nodeIndex[str(node.id)]=node
+            #if node.children==[]:
+                #self.nodeIndex[node.eTypeId]=node
             return
 
+        #处理非根结点
+        share = None
+        if isShare == True:
+            share = self.getSharedNode(node)
 
-        share = self.getSharedNode(node)
+        #森林中不存在以待处理结点为根结点的事件树
         if share == None:
+            #print node.eTypeId,'no share',self.id
             node.id = self.id
             self.id+=1
-            if self.nodeIndex.has_key(node.eTypeId):
-                self.nodeIndex[node.eTypeId].append(node)
-            else:
-                self.nodeIndex[node.eTypeId]=[node]
+            self.nodeIndex[str(node.id)]=node
+            #叶子结点，便于插入原子事件实例，共享情况
+            #if node.children==[]:
+                #self.nodeIndex[node.eTypeId]=node
+        #森林中存在以待处理结点为根结点的事件树
+        #孩子结点的排行，不能被打乱，父亲结点的排行可以打乱
         else:
-            for child in node.children:
-                child.father.remove(node)
-
+            #print 'get the share node: ',share.eTypeId,node.eTypeId,node.op,node.father[0].eTypeId
             father = node.father[0]
-            father.children.remove(node)
-            father.children.append(share)
+            if father!=None:
+                #解除孩子结点与node的父子关系
+                for child in node.children:
+                    child.father.remove(node)
+                #建立share结点与father结点的父子关系
+                loc = father.children.index(node)
+                father.children.insert(loc,share)
+                father.children.remove(node)#删掉与父结点的联系，#father.children.append(share)#共享结点设为父结点的孩子结点,这句会出问题
+                share.father.append(father)#将父结点设为共享结点的父结点
+                share.nodeId.append(node.nodeId[0])#设置共享结点在孩子结点中的编号
 
+
+        pass
 
     def getSharedNode(self,node):
-        if self.nodeIndex.has_key(node.eTypeId):
-            nodes = self.nodeIndex[node.eTypeId]
-            for item in nodes:
-                if self.isSameNode(item,node):
-                    flag = True
-                    for i in range(len(item.children)):
-                        if item.children[i].id != node.children[i].id:
-                            flag = False
-                            break
-                    if flag == True:
-                        return item
-            return None
-        else:
-            return None
+        keys = self.nodeIndex.keys()
+        for key in keys:
+            item = self.nodeIndex[key]
+            if self.isSameNode(item,node):
+                flag = True
+                for i in range(len(item.children)): #查看子结点是否相同
+                    if item.children[i].id != node.children[i].id:
+                        flag = False
+                        break
+                if flag == True:
+                    return item
+        return None
+        pass
 
     #1.检测两个节点，他们的eTypeId 和 attrs是否相同
     def isSameNode(self,node1,node2):
         attach1 = node1.attach
         attach2 = node2.attach
-        if node1.childrenId != node2.childrenId:
+        if node1.eTypeId != node2.eTypeId:#op可能相同
+            return False
+        elif node1.childrenId != node2.childrenId:
             return False
         elif node1.op != node2.op:
             return False
@@ -119,15 +147,17 @@ class eventForest():
                 return False
             if limit2['value'] != limit2['value']:
                 return False
-
         return True
 
+
+
 class eventTree():
-    def __init__(self):
+    def __init__(self,cep2):
+        self.cep = cep2
         pass
     #将输入转为事件树
     def getEventTree(self,input):
-        lexer = cedlLexer(input)#词法分析
+        lexer = cedlLexer(input)#词法分析 input为文件流
         stream = CommonTokenStream(lexer)#单词流
         parser = cedlParser(stream)#语法分析
         visitor = cedl_visitor()
@@ -142,8 +172,8 @@ class eventTree():
         pass
     def assignLimits(self,root):
         limits = root.attach
-        op = operator()
-        op.visitLimits(limits)
+        op = operator(self.cep)
+        #op.visitLimits(limits)
         for item in limits:
             #print 'gggg',item
 
@@ -223,7 +253,6 @@ class eventTree():
             #print u'不存在实例所对应的事件类型'
             return None
 
-
 def main(argv):
     #节点操作函数
     global seq
@@ -258,10 +287,6 @@ def main(argv):
     limits = root.attach
     op.visitLimits(limits)
 
-
-
-
-
     '''
     atom_events = root.eventsIndex
     for item in atom_events:
@@ -270,46 +295,30 @@ def main(argv):
 
 if __name__ == '__main__':
     main('input.txt')
-
-
     '''
     #lexer = ExprLexer(input)
     lexer = cedlLexer(input)
     stream = CommonTokenStream(lexer)
     #parser = ExprParser(stream)
     parser = cedlParser(stream)
-
     #context = parser.ProgContext(parser)
     visitor = cedl_visitor()
-
     listener = cedl_listener()
-
-
-
     try:
         tree = parser.cedl_event()
-
         visitor.visit(tree)
-
         walker = ParseTreeWalker()
         walker.walk(listener,tree)
-
         option = operator()
         root = visitor.root
         option.visit(root)
         limits = visitor.limits
         option.visitLimits(limits)
         root.attach = limits
-
         #测试事件索引
         premitive_events = visitor.premitive_events
         for item in premitive_events:
             print premitive_events[item].eTypeId
-
-
-
-
-
         #分层变量语法树
         #print "start"
         #op.visit(r)
@@ -317,12 +326,9 @@ if __name__ == '__main__':
         #print r.getChild(0)
     except Empty:
         pass
-
     #printer = progPrinter()
     #walker=ParseTreeWalker()
     #walker.walk(printer,tree)#printer as listener, tree为被监听对象
-
-
     #tree = parser.NEWLINE
    # print parser.NEWLINE
     #print parser.prog

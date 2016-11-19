@@ -23,10 +23,10 @@ class check():
             value =  item.restrictions['value']
 
             if instance.attrs.has_key(event_name) == False:
-                print 'no exist  attr',event_name
+                #print 'no exist  attr',event_name
                 return False
             if instance.attrs[event_name].has_key(attr_name) == False:
-                print 'no exist attr:',attr_name
+                #print 'no exist attr:',attr_name
                 return False
             v1 = instance.attrs[event_name][attr_name]
             if type(value) == type({}):
@@ -48,7 +48,7 @@ class check():
     def check(self,symbol,v1,v2):
 
         v2 = type(v1)(v2) #先转换为类型相同，再比较
-        print 'symbol;',symbol
+        #print 'symbol;',symbol
         return self.op[symbol](v1,v2)
 
 

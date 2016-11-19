@@ -1,1 +1,1 @@
-select complexEvent from E1,E2 pattern SEQ(E1,E2) limit E1.password = 123
+select complexEvent from E1,E2 pattern OR(AND(E3,SEQ(E1,E2)),E4) limit E1.password = 123

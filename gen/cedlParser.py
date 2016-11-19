@@ -1035,7 +1035,7 @@ class cedlParser ( Parser ):
                 self.state = 136
                 localctx.a = self.pattern_event_1()
 
-                localctx.node = eType_node("root")
+                localctx.node = eType_node("root","root")
                 localctx.node.addChildren(localctx.a.node)
                 localctx.a.node.father.append(localctx.node)#便于查询两个原子事件的最近共同祖�?
 
@@ -1044,7 +1044,7 @@ class cedlParser ( Parser ):
                 self.state = 139
                 localctx.a = self.pattern_event_2()
 
-                localctx.node = eType_node("root")
+                localctx.node = eType_node("root","root")
                 localctx.node.addChildren(localctx.a.node)
                 localctx.a.node.father.append(localctx.node)
 
@@ -1053,7 +1053,7 @@ class cedlParser ( Parser ):
                 self.state = 142
                 localctx.a = self.pattern_event_n()
 
-                localctx.node = eType_node("root")
+                localctx.node = eType_node("root","root")
                 localctx.node.addChildren(localctx.a.node)
                 localctx.a.node.father.append(localctx.node)
 

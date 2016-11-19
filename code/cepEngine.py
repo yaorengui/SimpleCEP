@@ -71,10 +71,10 @@ class cepEngine():
                         if (node.op != '-1')&(node.op!=None):#根节点的op为None,叶子节点的op为-1
                             op = operator()
                             newInstances = op.handler(node)
-                            for child in node.children:
-                                while node.start[child.nodeId]>0:
+                            for i,child in enumerate(node.children):
+                                while node.start[i]>0:
                                     child.instances.remove(child.instances[0])
-                                    node.start[child.nodeId]-=1
+                                    node.start[i]-=1
 
                             if newInstances !=None:
                                 limit = check()

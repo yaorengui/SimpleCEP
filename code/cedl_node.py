@@ -18,11 +18,11 @@ class forest_node():
 #事件类型节点
 class eType_node():
     def __init__(self,eTypeId,op=None,father=None):
-        self.id = None #节点在森林中的唯一编号
-        self.context="Continuous"#设置为默认值
-        self.childrenId = 0 #初始化时，孩子节点为空，每增加一个孩子节点，childrenId＋1
+        self.id = None #节点在森林中的唯一编号,森林中，id具有唯一性
+        self.context="cumulative"#设置为默认值
+        self.childrenId = 0 #孩子结点个数
         self.eTypeId = eTypeId
-        self.nodeId = None #节点在在父节点中子节点的编号
+        self.nodeId = [] #兄弟排行，节点在在父节点中子节点的编号,考虑到存在多个父节点，故采用结合的形式
         self.op = op
         self.children = []#eType_node类型
         self.father = [] #主要针对共享节点
@@ -34,11 +34,31 @@ class eType_node():
         self.repeatNum = None #用于repeat操作存储重复次数
         self.complexEventID = None #存储复杂事件的名字,唯一的ID号
         self.start = []            #标记实例开始的起始位置
+        self.seqt = [] ##针对seq操作 rencent
+        self.last = [] ##针对seq操作 cumulativeSeq
+        pass
 
+    def toString(self):
+        temp = "<strong>id:</strong>"
+        temp+=str(self.id)
+        temp+="<br>"
+        temp+="<strong>context:</strong>"
+        temp+=str(self.context)
+        temp+="<br>"
+        temp+="<strong>childrenId:</strong>"
+        temp+=str(self.childrenId)
+        temp+="<br>"
+        return temp
+        pass
     def addChildren(self,node):
-        node.nodeId = self.childrenId
+        node.nodeId.append(self.childrenId)
         self.childrenId+=1
         self.start.append(0)#initiate the starting position with zero
+        if str(self.op).lower() == 'seq':
+            self.seqt.append(-1)
+            self.last.append(-1)
+            #print len(self.seqt),'dddd'
+
         self.children.append(node)
 
 
@@ -59,14 +79,16 @@ class attach_node():
 
 class eInstance_node():
     def __init__(self,eId,eTypeId,t0=None,t1=None):
-        self.eId = eId
-        self.eTypeId = eTypeId #插入事件时使用
+        self.eSeq = eId
+        self.eId = eId #按时间先后顺序赋值
+        self.eTypeId = eTypeId #插入事件时使用 事件ID，如symbol="IF1607",IF1607为eTypeId
         #若为原子事件，则attrs中只包含原始数据，若为非原子事件，则attrs中包含多个原子事件的原始数据
         self.attrs = {}#存储原子事件的数据
         self.t0 = t0
         self.t1= t1
         if t0 == None:self.t0 = 0
         if t1 == None:self.t1 =1
+
 
 class eIndex():
     def __init__(self):
@@ -127,7 +149,7 @@ def main():
     attr['name']="yaorengui"
     attr['password']="123456"
     attr['id']= 12
-    ins.attrs.append(attr)
+    ins.attrs[attr['id']] = attr
     ins.t0 = 12
     ins.t1 = 15
     index_node.instances.append(ins)

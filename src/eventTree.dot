@@ -1,0 +1,8 @@
+strict digraph  {
+	graph [epsilon=0.001];
+	root -> seq;
+	seq -> repeat;
+	seq -> within;
+	repeat -> zn1701;
+	within -> zn1702;
+}
