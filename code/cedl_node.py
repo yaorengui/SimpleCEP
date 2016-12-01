@@ -2,6 +2,7 @@
 from collections import OrderedDict
 from code.cedlPattern import *
 from Queue import Queue, Empty
+from List import *
 
 import time
 #设计基准：
@@ -19,7 +20,7 @@ class forest_node():
 class eType_node():
     def __init__(self,eTypeId,op=None,father=None):
         self.id = None #节点在森林中的唯一编号,森林中，id具有唯一性
-        self.context="cumulative"#设置为默认值
+        self.context="recent"#设置为默认值
         self.childrenId = 0 #孩子结点个数
         self.eTypeId = eTypeId
         self.nodeId = [] #兄弟排行，节点在在父节点中子节点的编号,考虑到存在多个父节点，故采用结合的形式
@@ -48,6 +49,21 @@ class eType_node():
         temp+="<strong>childrenId:</strong>"
         temp+=str(self.childrenId)
         temp+="<br>"
+        temp+="<strong>filter:</strong>"
+        temp+="<br>"
+        for item in self.attach:
+            key1 = item.restrictions['event_name']
+            attr1 = item.restrictions['event_attr']
+            op = item.restrictions['op']
+            v  = item.restrictions['value']
+            print key1,attr1,op,str(v)
+            if type(v)== type({}):
+                key2 = v['event_name']
+                attr2 = v['event_attr']
+                v=str(key2)+'.'+str(attr2)
+            temp+="<strong>"+str(key1)+'.'+str(attr1)+str(op)+str(v)+"</Strong>"
+            temp+="<br>"
+
         return temp
         pass
     def addChildren(self,node):
@@ -69,6 +85,88 @@ class eType_node():
         return self.childrenId
 
  #每个节点存储一个限制条件,便于增加和删除节点，也便于限制条件下推
+
+class aggregationNode():
+    def __init__(self,eTypeId,op,len,attriName,reType):
+        #新增属性
+        self.list = List()
+        self.len = len
+        self.attriName = attriName
+        self.reType = reType
+        self.values = [] #存放聚集值
+        self.last = None
+        self.sum = 0.0
+        self.count=0
+        self.avg = 0.0
+        self.min = None
+        self.max = None
+
+        self.id = None #节点在森林中的唯一编号,森林中，id具有唯一性
+        self.context="recent"#设置为默认值
+        self.childrenId = 0 #孩子结点个数
+        self.eTypeId = eTypeId
+        self.nodeId = [] #兄弟排行，节点在在父节点中子节点的编号,考虑到存在多个父节点，故采用结合的形式
+        self.op = op
+        self.children = []#eType_node类型
+        self.father = [] #主要针对共享节点
+        self.instances = [] #初步将事件实例定义为一次消费型
+        self.attach = [] #存储attach_node节点，
+        self.eventsIndex = {}#只在根节点中出现
+        self.timeval = None #存储时间间隔，用于WITHIN操作
+        self.timeunit = None #存储事件单位,用于WITHIN操作
+        self.repeatNum = None #用于repeat操作存储重复次数
+        self.complexEventID = None #存储复杂事件的名字,唯一的ID号
+        self.start = []            #标记实例开始的起始位置
+        self.seqt = [] ##针对seq操作 rencent
+        self.last = [] ##针对seq操作 cumulativeSeq
+        pass
+
+    def toString(self):
+        temp = "<strong>id:</strong>"
+        temp+=str(self.id)
+        temp+="<br>"
+        temp+="<strong>context:</strong>"
+        temp+=str(self.context)
+        temp+="<br>"
+        temp+="<strong>childrenId:</strong>"
+        temp+=str(self.childrenId)
+        temp+="<br>"
+
+        temp+="<strong>filter:</strong>"
+        temp+="<br>"
+        for item in self.attach:
+            key1 = item.restrictions['event_name']
+            attr1 = item.restrictions['event_attr']
+            op = item.restrictions['op']
+            v  = item.restrictions['value']
+            print key1,attr1,op,str(v)
+            if type(v)== type({}):
+                key2 = v['event_name']
+                attr2 = v['event_attr']
+                v=str(keys)+'.'+str(attr2)
+            temp+="<strong>"+str(key1)+'.'+str(attr1)+str(op)+str(v)+"</Strong>"
+            temp+="<br>"
+
+        return temp
+
+    def addChildren(self,node):
+        node.nodeId.append(self.childrenId)
+        self.childrenId+=1
+        self.start.append(0)#initiate the starting position with zero
+        if str(self.op).lower() == 'seq':
+            self.seqt.append(-1)
+            self.last.append(-1)
+            #print len(self.seqt),'dddd'
+
+        self.children.append(node)
+
+
+    def addInstances(self,node):
+        self.instances.append(node)
+
+    def getChildrenId(self):
+        return self.childrenId
+    pass
 class attach_node():
     def __init__(self,attachId=None):
         self.attachId = attachId

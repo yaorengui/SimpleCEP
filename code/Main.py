@@ -15,15 +15,17 @@ def main():
     app = QtGui.QApplication(sys.argv)
     app.setWindowIcon(QtGui.QIcon('../image/93-view-filter.png'))
     #app.setFont(BASIC_FONT)
-    str_cedl = "select complexEvent from cu1607,p1609,ru1609 pattern AND(SEQ(cu1607,p1609),ru1609) limit ru1609. LastPrice > 0"
-    str_cedl2 = "select complexEvent2 from p1609,cu1607 pattern SEQ(cu1607,p1609) limit ru1609. LastPrice > 0"
-    str_cedl3 = "select complexEvent2 from sh601006,sh601003,sh601001 pattern and(sh601006,sh601003,sh601001) limit sh601001.openPrice > 0"
+    #str_cedl = "select complexEvent from cu1607,p1609,ru1609 pattern AND(SEQ(cu1607,p1609),ru1609) limit ru1609. LastPrice > 0"
+    #str_cedl2 = "select complexEvent2 from p1609,cu1607 pattern SEQ(cu1607,p1609) limit ru1609. LastPrice > 0"
+    #str_cedl3 = "select complexEvent2 from sh601006,sh601003,sh601001 pattern and(sh601006,sh601003,sh601001) limit sh601001.openPrice > 0"
+    strAvg = "select avgs from p1609 pattern seq(avg(p1609,50,LastPrice,avg1),avg(p1609,100,LastPrice,avg2)) limit avg1.average>$avg2.average"
+    strMin="select min from p1609 pattern min(p1609,100,LastPrice,min1) limit min1.minValue>5443"
     engine = cepEngine2()
     #engine.putEventTree('../code/input.txt')
     share = True
-    engine.addEventWithCedl(str_cedl,share)
-    engine.addEventWithCedl(str_cedl2,share)
-    engine.addEventWithCedl(str_cedl3,share)
+    engine.addEventWithCedl(strAvg,share)
+    #engine.addEventWithCedl(str_cedl2,share)
+    #engine.addEventWithCedl(str_cedl3,share)
     engine.start()
     #engine.register('complexEvent',handler)
     engine.start()

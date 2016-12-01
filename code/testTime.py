@@ -3,30 +3,10 @@ from cepEngine import cepEngine
 import shelve
 from cepEngine2 import *
 import time
-def test():
-    str_cedl = "select complexEvent from cu1607,p1609,ru1609 pattern AND(SEQ(cu1607,p1609),ru1609) limit ru1609. LastPrice > 0"
-    str_cedl2 = "select complexEvent2 from p1609,cu1607 pattern SEQ(cu1607,p1609) limit ru1609. LastPrice > 0"
-    str_cedl3 = "select complexEvent2 from sh601006,sh601003,sh601001 pattern and(sh601006,sh601003,sh601001) limit sh601001.openPrice > 0"
+def testTime(isShare,strCedl):
     engine = cepEngine2()
-    engine.addEventWithCedl(str_cedl)
-    engine.addEventWithCedl(str_cedl2)
-    #engine.addEventWithCedl(str_cedl3)
-    engine.start()
-
-    """加载数据"""
-    f = shelve.open('../data/stock1.vt')
-    if 'data' in f:
-        d = f['data']
-        for value in d:
-            engine.putAtomEvent(value)
-    f.close()
-
-def testTime(isShare):
-    str_cedl = "select complexEvent from cu1607,p1609,ru1609 pattern AND(SEQ(cu1607,p1609),ru1609) limit ru1609. LastPrice > 0"
-    str_cedl2 = "select complexEvent2 from p1609,cu1607 pattern SEQ(cu1607,p1609) limit ru1609. LastPrice > 0"
-    engine = cepEngine2()
-    engine.addEventWithCedl(str_cedl,isShare)
-    engine.addEventWithCedl(str_cedl2,isShare)
+    for item in strCedl:
+        engine.addEventWithCedl(item,isShare)
 
     testTime = []
     temp = 0
@@ -59,13 +39,10 @@ def testTime(isShare):
     for i,item in enumerate(testTime):
         print '(', str(i+1),',',item,")"
 
-def testAverageNumberOfComplexEvent(isShare):
-    #str_cedl = "select complexEvent from cu1607,p1609,ru1609 pattern AND(SEQ(cu1607,p1609),ru1609) limit ru1609. LastPrice > 0"
-    str_cedl2 = "select complexEvent2 from p1609,cu1607 pattern SEQ(cu1607,p1609) limit ru1609. LastPrice > 0"
-    cedl =      'select complexEvent2 from p1609,cu1607 pattern AND(cu1607,p1609) limit ru1609. LastPrice > 0'
+def testAverageNumberOfComplexEvent(isShare,strCedl):
     engine = cepEngine2()
-    #engine.addEventWithCedl(str_cedl,isShare)
-    engine.addEventWithCedl(str_cedl2,isShare)
+    for item in strCedl:
+        engine.addEventWithCedl(item,isShare)
     testTime = []
     temp = 0
     for i in range(7):
@@ -88,13 +65,11 @@ def testAverageNumberOfComplexEvent(isShare):
 
     print '};'
 
-def testSpace(isShare):
-    str_cedl = "select complexEvent from cu1607,p1609,ru1609 pattern AND(SEQ(cu1607,p1609),ru1609) limit ru1609. LastPrice > 0"
-    str_cedl2 = "select complexEvent2 from p1609,cu1607 pattern SEQ(cu1607,p1609) limit ru1609. LastPrice > 0"
+def testSpace(isShare,strCedl):
+    print 'start....'
     engine = cepEngine2()
-    engine.addEventWithCedl(str_cedl,isShare)
-    engine.addEventWithCedl(str_cedl2,isShare)
-
+    for item in strCedl:
+        engine.addEventWithCedl(item,isShare)
     testTime = []
     temp = 0
     for i in range(7):
@@ -112,17 +87,32 @@ def testSpace(isShare):
             t = (time.time() - start) + temp
             testTime.append(temp/10000)
             temp = t
-
-
         f.close()
     for i,item in enumerate(testTime):
         print '(', str(i+1),',',item,")"
 
 def main():
-   #testTime(True)
-   #testTime(False)
-   testAverageNumberOfComplexEvent(True)
-   #testSpace(True)
+    str_cedl = "select complexEvent from cu1607,p1609,ru1609 pattern AND(SEQ(cu1607,p1609),ru1609) limit ru1609.LastPrice > 2000"
+    str_cedl2 = "select complexEvent2 from p1609,cu1607 pattern SEQ(cu1607,p1609) limit p1609.LastPrice > 2000"
+    strAvg = "select avgs from p1609 pattern seq(avg(p1609,40,LastPrice,avg1),avg(p1609,90,LastPrice,avg2)) limit avg1.average>$avg2.average and avg1.average<5445"
+    strDec = "select dec from p1609 pattern seq(dec(p1609,3,LastPrice,dec1),p1609) limit dec1.minValue>5000 and dec1.minValue<$p1609.LastPrice"
+    strMin = "select min from p1609 pattern min(cu1607,3,LastPrice,min1) limit min1.minValue<5444"
+
+    #strInc = "select min from p1609 pattern inc(cu1607,3,LastPrice,inc1) limit inc1.minValue>0"
+
+    temp = []
+    #temp.append(str_cedl)
+    #temp.append(str_cedl2)
+    temp.append(strAvg)
+    #temp.append(strDec)
+    #temp.append(strMin)
+    #temp.append(strInc)
+    testTime(True,temp)
+    #testTime(False,temp)
+    testAverageNumberOfComplexEvent(True,temp)
+    testSpace(True,temp)
+
+    #testTime(False,temp)
 
 if __name__ =='__main__':
     main()

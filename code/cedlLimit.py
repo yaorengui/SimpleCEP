@@ -21,20 +21,20 @@ class check():
             event_name =  item.restrictions['event_name']
             attr_name =  item.restrictions['event_attr']
             value =  item.restrictions['value']
-
+            #print 'gg',item.restrictions
             if instance.attrs.has_key(event_name) == False:
-                #print 'no exist  attr',event_name
+                print 'cedlLimit.check:no exist  event_name',event_name,node.eTypeId,instance.attrs
                 return False
             if instance.attrs[event_name].has_key(attr_name) == False:
-                #print 'no exist attr:',attr_name
+                print 'cedlLimit.check:no exist attr:',attr_name,node.eTypeId,instance.attrs
                 return False
             v1 = instance.attrs[event_name][attr_name]
             if type(value) == type({}):
                 if instance.attrs.has_key(value['event_name']) == False:
-                    print 'no exist key1',value['event_name']
+                    print 'cedlLimit.check：no exist key1',value['event_name']
                     return False
                 if instance.attrs[value['event_name']].has_key(value['event_attr']) == False:
-                    print 'no exist key2',value['event_attr']
+                    print 'cedlLimit.check：no exist key2',value['event_attr']
                     return False
 
                 v2 = instance.attrs[value['event_name']][value['event_attr']]
@@ -46,7 +46,7 @@ class check():
 
 
     def check(self,symbol,v1,v2):
-
+        #print symbol,v1,v2
         v2 = type(v1)(v2) #先转换为类型相同，再比较
         #print 'symbol;',symbol
         return self.op[symbol](v1,v2)

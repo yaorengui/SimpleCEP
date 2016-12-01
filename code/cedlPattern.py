@@ -1,12 +1,46 @@
 # -*- coding: utf8 -*-
 from code.cedl_node import *
 from Queue import Queue, Empty
+from cedlLimit import *
+from List import *
 import time
 
 class operator():
     def __init__(self,cep2):
         self.cep = cep2
         self.pattern = {}
+        self.pattern['recent.avg']=self.avg
+        self.pattern['chronicle.avg']=self.avg
+        self.pattern['continuous.avg']=self.avg
+        self.pattern['cumulative.avg']=self.avg
+
+        self.pattern['recent.sum']=self.sum
+        self.pattern['chronicle.sum']=self.sum
+        self.pattern['continuous.sum']=self.sum
+        self.pattern['cumulative.sum']=self.sum
+
+        self.pattern['recent.min']=self.min
+        self.pattern['chronicle.min']=self.min
+        self.pattern['continuous.min']=self.min
+        self.pattern['cumulative.min']=self.min
+
+        self.pattern['recent.max']=self.max
+        self.pattern['chronicle.max']=self.max
+        self.pattern['continuous.max']=self.max
+        self.pattern['cumulative.max']=self.max
+
+
+        self.pattern['recent.dec']=self.dec
+        self.pattern['chronicle.dec']=self.dec
+        self.pattern['continuous.dec']=self.dec
+        self.pattern['cumulative.dec']=self.dec
+
+        self.pattern['recent.inc']=self.inc
+        self.pattern['chronicle.inc']=self.inc
+        self.pattern['continuous.inc']=self.inc
+        self.pattern['cumulative.inc']=self.inc
+
+
         self.pattern['recent.and']=self.recentAnd
         self.pattern['recent.or']=self.Or
         self.pattern['recent.seq']=self.recentSeq
@@ -53,17 +87,192 @@ class operator():
         pass
     ##返回实例集合或None
     def handler(self,node,child):
-        if self.pattern.has_key(str(node.op).lower()):
-            key = str(node.context).lower()+'.'+str(node.op).lower()
+        key = str(node.context).lower()+'.'+str(node.op).lower()
+        if self.pattern.has_key(key):
             return  self.pattern[key](node,child)
         else:
             print 'no exist key',str(node.op)
             return []
+
+    def avg(self,node,child):
+        newInstances = []
+        value = float(child.instances[0].attrs[str(child.eTypeId)][str(node.attriName)])
+        node.sum+=value
+        node.count+=1
+        node.values.append(value)
+        node.start[0]+=1
+        if node.count>int(node.len):
+            node.values.remove(node.values[0])
+            temp=node.values[0]
+            node.sum-=temp
+            node.avg = node.sum/int(node.len)
+            temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
+            temp.attrs[node.reType]={}
+            temp.attrs[node.reType]['average']=node.avg
+            self.addInstanceAttri(temp,child.instances[0])
+            newInstances.append(temp)
+
+            #print node.reType,node.avg,child.instances[0].eSeq
+
+        self.removeChildInstances(node)
+        return newInstances
+        pass
+
+    def dec(self,node,child):
+        newInstances = []
+        value = float(child.instances[0].attrs[str(child.eTypeId)][str(node.attriName)])
+        #print value
+        node.values.append(value)
+        if (node.last==None)|(node.last>value):
+            node.count+=1
+
+        elif node.last==value:
+            pass
+        else:
+            node.count=0
+            node.values=[value]
+
+        node.last=value
+        node.start[0]+=1
+        if node.count>=int(node.len):
+            node.values.remove(node.values[0])
+            temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
+            temp.attrs[node.reType]={}
+            temp.attrs[node.reType]['minValue']=value
+            temp.attrs[node.reType]['maxValue']=node.values[0]
+            self.addInstanceAttri(temp,child.instances[0])
+            newInstances.append(temp)
+            #print '连续下降值',node.values
+
+        self.removeChildInstances(node)
+        return newInstances
+        pass
+
+
+    def sum(self,node,child):
+        newInstances = []
+        value = float(child.instances[0].attrs[str(child.eTypeId)][str(node.attriName)])
+        node.sum+=value
+        node.count+=1
+        node.values.append(value)
+        node.start[0]+=1
+        if node.count>int(node.len):
+            node.values.remove(node.values[0])
+            temp=node.values[0]
+            node.sum-=temp
+            temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
+            temp.attrs[node.reType]={}
+            temp.attrs[node.reType]['average']=node.sum
+            self.addInstanceAttri(temp,child.instances[0])
+            newInstances.append(temp)
+
+        self.removeChildInstances(node)
+        return newInstances
+
+    def min(self,node,child):
+
+        newInstances = []
+        value = float(child.instances[0].attrs[str(child.eTypeId)][str(node.attriName)])
+
+        List = node.list
+        listNode = List.head
+        if List.head.next!=None:
+            if List.seq - List.head.next.seq > int(node.len):
+                List.delete(List.head.next)
+
+        while listNode.next!=None:
+            if listNode.next.value<value:
+                listNode = listNode.next
+            else:
+                break
+        List.insertAfter(listNode,value)
+        List.deleteAfter(listNode.next)
+
+        if List.seq>int(node.len):
+            temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
+            temp.attrs[node.reType]={}
+            temp.attrs[node.reType]['minValue']=List.head.next.value
+            self.addInstanceAttri(temp,child.instances[0])
+            newInstances.append(temp)
+
+        #self.printList(List)
+
+        node.start[0]+=1
+        self.removeChildInstances(node)
+        return newInstances
+
+    def printList(self,List):
+        t = List.head.next
+        temp = []
+        while t!=None:
+            temp.append(t.value)
+            t = t.next
+        print temp,List.seq
+
+    def max(self,node,child):
+        newInstances = []
+        value = float(child.instances[0].attrs[str(child.eTypeId)][str(node.attriName)])
+
+        List = node.list
+        listNode = List.head
+        if List.head.next!=None:
+            if List.seq - List.head.next.seq > int(node.len):
+                List.delete(List.head.next)
+
+        while listNode.next!=None:
+            if listNode.next.value>value:
+                listNode = listNode.next
+            else:
+                break
+        List.insertAfter(listNode,value)
+        List.deleteAfter(listNode.next)
+
+        if List.seq>int(node.len):
+            temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
+            temp.attrs[node.reType]={}
+            temp.attrs[node.reType]['minValue']=List.head.next.value
+            self.addInstanceAttri(temp,child.instances[0])
+            newInstances.append(temp)
+
+        node.start[0]+=1
+        self.removeChildInstances(node)
+        return newInstances
+
+    def inc(self,node,child):
+        newInstances = []
+        value = float(child.instances[0].attrs[str(child.eTypeId)][str(node.attriName)])
+        #print value
+        node.values.append(value)
+        if (node.last==None)|(node.last<value):
+            node.count+=1
+
+        elif node.last==value:
+            pass
+        else:
+            node.count=0
+            node.values=[value]
+
+        node.last=value
+        node.start[0]+=1
+        if node.count>=int(node.len):
+            node.values.remove(node.values[0])
+            temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
+            temp.attrs[node.reType]={}
+            temp.attrs[node.reType]['minValue']=node.values[0]
+            temp.attrs[node.reType]['maxValue']=value
+            self.addInstanceAttri(temp,child.instances[0])
+            newInstances.append(temp)
+
+            limit = check()
+            if limit.checks(node,temp):
+                #print '连续上升值',node.values
+                pass
+
+        self.removeChildInstances(node)
+        return newInstances
+        pass
+
     def cumulativeSeq(self,node,child):
-        #print node.start[0],node.start[1],len(node.children[0].instances),len(node.children[1].instances)
-        #print len(node.children[0].instances),len(node.children[1].instances)
-        #for i in node.seqt:
-            #print i
         newInstances = []
 
         for i,item in enumerate(node.seqt):
@@ -73,9 +282,7 @@ class operator():
                 elif i == 0:
                     node.seqt[i] = 0
                     node.start[i] = len(node.children[i].instances)-1
-                    #print node.seqt[0],node.seqt[1],child.eTypeId
                 else:
-                    #print node.seqt[0],node.seqt[1],child.eTypeId
                     node.last[i-1] = len(node.children[i-1].instances)-1
                     node.start[i] = len(node.children[i].instances)-1
                     if i == node.childrenId - 1:
@@ -88,8 +295,8 @@ class operator():
                         for j,item in enumerate(node.children):
                             for k in range(node.last[j]-node.start[j]+1):
                               self.mergeInstanceWithEseq(item.instances[node.start[j]+k],temp)
+                              self.addInstanceAttri(temp,item.instances[node.start[j]+k])
                             node.start[j] = node.last[j]+1
-                        self.cep.numberOfComplexEvent+=1
                         #跟新seqt、last
                         for s,item in enumerate(node.seqt):
                             node.seqt[s] = -1
@@ -108,24 +315,23 @@ class operator():
         #生成复杂事件
         temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
         newInstances.append(temp)
-        self.cep.numberOfComplexEvent+=1
         temp.attrs['eSeq'] = []
         temp.attrs['eTypeId'] = []
         for i,item in enumerate(node.children):
             for j in range(len(item.instances)-node.start[i]):
               self.mergeInstanceWithEseq(item.instances[node.start[i]+j],temp)
+              self.addInstanceAttri(temp,item.instances[node.start[i]+j])
             #修改start
             node.start[i] = len(item.instances)
-            #print 's', len(node.children[0].instances),node.start[0],len(node.children[1].instances),node.start[1]
             self.removeChildInstances(node)
-            #print 'e',len(node.children[0].instances),node.start[0],len(node.children[1].instances),node.start[1]
-        #孩子实例更新
 
         return newInstances
 
     def mergeInstanceWithEseq(self,source,dest):
         dest.attrs['eSeq'].append(source.eSeq)
         dest.attrs['eTypeId'].append(source.eTypeId)
+
+
     def continuousAnd(self,node,child):
         #print 'len',len(node.children[0].instances),len(node.children[1].instances)
         #if len(node.children[0].instances)-1 >= node.start[0] &len(node.children[1].instances)-1 >= node.start[1]:
@@ -144,41 +350,23 @@ class operator():
                     if node.children[i].instances[node.start[i]].eSeq < temp:
                         temp = node.children[i].instances[node.start[i]].eSeq
                         min1 = i
-            #print 'ddd'
-            #step2:初始化返回的实例
             self.cep.seq+=1
             temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
-            newInstances.append(temp)
-            self.cep.numberOfComplexEvent+=1
+
             #step3:给返回的实例填充数据
             for i,child in enumerate(node.children):
                 instance = child.instances[node.start[i]]#the node.start[i] instance
                 attr = instance.attrs
+
                 for key in attr.keys():
-                    newInstances[0].attrs[key] = attr[key]  #给返回的实例填充数据
-                    if newInstances[0].t0>instance.t0:
-                        newInstances[0].t0 = instance.t0
-                    if newInstances[0].t1<instance.t1:
-                        newInstances[0].t1 = instance.t1
-
+                    temp.attrs[key] = attr[key]  #给返回的实例填充数据
+                    if temp.t0>instance.t0:
+                        temp.t0 = instance.t0
+                    if temp.t1<instance.t1:
+                        temp.t1 = instance.t1
             node.start[min1]+=1
-            #print '222',min1
-
-            fathers = node.children[min1].father
-            #print len(node.children[min1].father)
-
-            seq = []
-            #求删除实例的个数
-            for i in range(len(fathers)):
-                seq.append(fathers[i].start[node.children[min1].nodeId[i]])
-                #print i,node.children[min1].nodeId[0],node.children[min1].nodeId[1]
-            #删除实例
-            #print min(seq)
-            for j in range(min(seq)):
-                node.children[min1].instances.remove(node.children[min1].instances[0])
-            #修改start
-            for k in range(len(fathers)):
-                fathers[k].start[node.children[min1].nodeId[k]]-=min(seq)
+            newInstances.append(temp)
+            self.removeChildInstances(node)
 
     def continuousSeq(self,node,child):
         newInstances = []
@@ -188,13 +376,14 @@ class operator():
             self.cep.seq += 1
             temp = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
             newInstances.append(temp)
-            self.cep.numberOfComplexEvent+=1
             #step3:给返回的实例填充数据
             for i,child in enumerate(node.children):
                 #print i,node.start[i],len(child.instances),'dd'
                 instance = child.instances[node.start[i]]#the node.start[i] instance
                 #print node.start[i]
                 attr = instance.attrs
+                #print 'dddd',instance.eTypeId,child.eTypeId,len(node.children)
+
                 for key in attr.keys():
                     newInstances[0].attrs[key] = attr[key]  #给返回的实例填充数据
                     if newInstances[0].t0>instance.t0:
@@ -281,7 +470,6 @@ class operator():
         #step2:初始化返回的实例
         temp = eInstance_node(0,node.eTypeId,time.time(),0)
         newInstances.append(temp)
-        self.cep.numberOfComplexEvent+=1
         #step3:给返回的实例填充数据
         for i,child in enumerate(node.children):
                 instance = child.instances[len(child.instances)-1]#the last instance
@@ -327,7 +515,7 @@ class operator():
             if len(indexs) == node.childrenId:
                 temp = self.getComplexWithIndexs(node,indexs)
                 newInstances.append(temp)
-                self.cep.numberOfComplexEvent+=1
+
                 #修改start
 
                 for i in range(node.childrenId):
@@ -346,16 +534,26 @@ class operator():
         instance = eInstance_node(self.cep.seq,node.eTypeId,time.time(),0)
         #step3:给返回的实例填充数据
         for i,child in enumerate(node.children):
-            instance = child.instances[indexs[len(indexs)-i-1]]
-            attr = instance.attrs
+            ins = child.instances[indexs[len(indexs)-i-1]]
+            attr = ins.attrs
+            #print 'd',attr
             for key in attr.keys():
-                instance.attrs[key] = attr[key]  #给返回的实例填充数据
+                instance.attrs[str(key)] = attr[key]  #给返回的实例填充数据
                 if instance.t0>instance.t0:
                     instance.t0 = instance.t0
                 if instance.t1<instance.t1:
                     instance.t1 = instance.t1
+        #print instance.attrs
         return instance
-
+    def addInstanceAttri(self,instance1,instance2):
+        attr = instance2.attrs
+        for key in attr.keys():
+            instance1.attrs[str(key)] = attr[key]  #给返回的实例填充数据
+            if instance1.t0>instance1.t0:
+                instance1.t0 = instance1.t0
+            if instance1.t1<instance1.t1:
+                instance1.t1 = instance1.t1
+        pass
     def removeChildInstances(self,node):
         #step`1:通用，删除过期实例，并更新start数组
         for a,child in enumerate(node.children):
@@ -536,7 +734,6 @@ class operator():
         for i in range(count):
             temp = eInstance_node(0,node.eTypeId,time.time(),0)
             newInstances.append(temp)
-            self.cep.numberOfComplexEvent+=1
         #step3:给返回的实例填充数据
         for i,child in enumerate(node.children):
             for j in range(count):
@@ -591,7 +788,6 @@ class operator():
             #step2:fill the newInstance
             if len(temp) == len(node.children):
                 newInstance = eInstance_node(0,node.eTypeId,time.time(),0)
-                self.cep.numberOfComplexEvent+=1
                 for item in temp:
                     attr = item.attrs
                     for key in attr.keys():

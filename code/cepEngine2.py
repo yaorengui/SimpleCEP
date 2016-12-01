@@ -73,13 +73,11 @@ class cepEngine2():
                     break
                 nodes = childQueue.get()
                 self.traceQueue.put(nodes)#保存节点处理轨迹
-
                 for father in nodes.father:
                     op = operator(self)
                     newInstances = op.handler(father,nodes)
                     limit = check()
                     for item in newInstances:
-                        #if True:
                         if limit.checks(father,item):
                             father.instances.append(item)
                             if father.op!='root':
@@ -91,9 +89,10 @@ class cepEngine2():
                                     instance = father.instances[0]
                                     instance.eTypeId = father.complexEventID
                                     #self.outputQueue.put(instance)
-                                    #self.numberOfComplexEvent +=1
+                                    self.numberOfComplexEvent +=1
 
-                                    #print str(instance.attrs)
+
+                                    #print instance.attrs['avg1'],instance.attrs['avg2']
                                     father.instances.remove(instance)
                                 #print 123
                                 #father.instances = []
@@ -136,13 +135,22 @@ class cepEngine2():
     def putToNode(self,data):
         r = []
         instance = self.getInstance(data)
+        #print self.eventForest.nodeIndex.keys()
         for key in self.eventForest.nodeIndex.keys():
+            #print instance.eTypeId
             item = self.eventForest.nodeIndex[key]
             if item.eTypeId == instance.eTypeId:
+
                 limit = check()
+                #print limit.checks(item,instance)
                 if limit.checks(item,instance):
+                    #print 'ss'
                     item.instances.append(instance)    #需要处理的叶子结点
                     r.append(item)
+                #else:
+                    #item.instances.append(instance)    #需要处理的叶子结点
+                    #r.append(item)
+
         return r
     #将原子事件实例插入叶子结点
     def putDataToAtomNode(self,data):

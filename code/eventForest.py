@@ -175,8 +175,6 @@ class eventTree():
         op = operator(self.cep)
         #op.visitLimits(limits)
         for item in limits:
-            #print 'gggg',item
-
             key1 = item.restrictions['event_name']
             v  = item.restrictions['value']
 
@@ -190,10 +188,7 @@ class eventTree():
                 if sameFather.eTypeId == root.eTypeId:
                     continue
 
-                #print "no None"
                 sameFather.attach.append(item)
-
-                #root.attach.remove(item)#会出麻烦
 
             else:
                 event = self.lookup(root.eventsIndex,key1)
@@ -212,12 +207,12 @@ class eventTree():
         if index.has_key(key1):
             e1 = index[key1]
         else:
-            print 'no exist e1 key',key1
+            print 'eventForest.getFather : no exist e1 key',key1
             return None
         if index.has_key(key2):
             e2 = index[key2]
         else:
-            print 'no exist e2 key',key2
+            print 'eventForest.getFather :no exist e2 key',key2
             return None
         father = []
         #print e1.eTypeId,root.eTypeId
