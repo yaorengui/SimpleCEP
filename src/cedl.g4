@@ -14,7 +14,7 @@ cedl_events
     ;
 
 cedl_event returns [premitive_events]
-    :select_clause from_clause pattern_clause (limit_clause)? (time_clause|len_clause)? (context_clause)?
+    :select_clause from_clause pattern_clause (limit_clause)? (time_clause|len_clause)? (a=context_clause)?
 {
 $premitive_events = premitive_events
 }
@@ -140,6 +140,54 @@ $node = eType_node('at','at')
 $node.addChildren($a.node)
 $a.node.father.append($node)
 }
+    |(AVG OPEN_PAR a =event COMMA b=len_value COMMA c=attr_name COMMA d = attr_name CLOSE_PAR)
+{
+$node = aggregationNode(str($d.text),'avg',str($b.text),str($c.text),str($d.text))
+$node.addChildren($a.node)
+$a.node.father.append($node)
+
+premitive_events[str($d.text)] = $node
+}
+    |(SUM OPEN_PAR a =event COMMA b=len_value COMMA c=attr_name COMMA d = attr_name CLOSE_PAR)
+{
+$node = aggregationNode(str($d.text),'sum',$b.text,$c.text,str($d.text))
+$node.addChildren($a.node)
+$a.node.father.append($node)
+
+premitive_events[str($d.text)] = $node
+}
+    |(MINOP OPEN_PAR a =event COMMA b=len_value COMMA c=attr_name COMMA d = attr_name CLOSE_PAR)
+{
+$node = aggregationNode(str($d.text),'min',$b.text,$c.text,str($d.text))
+$node.addChildren($a.node)
+$a.node.father.append($node)
+
+premitive_events[str($d.text)] = $node
+}
+    |(MAX OPEN_PAR a =event COMMA b=len_value COMMA c=attr_name COMMA d = attr_name CLOSE_PAR)
+{
+$node = aggregationNode(str($d.text),'max',$b.text,$c.text,str($d.text))
+$node.addChildren($a.node)
+$a.node.father.append($node)
+
+premitive_events[str($d.text)] = $node
+}
+  |(DEC OPEN_PAR a =event COMMA b=len_value COMMA c=attr_name COMMA d = attr_name CLOSE_PAR)
+{
+$node = aggregationNode(str($d.text),'dec',$b.text,$c.text,str($d.text))
+$node.addChildren($a.node)
+$a.node.father.append($node)
+
+premitive_events[str($d.text)] = $node
+}
+  |(INC OPEN_PAR a =event COMMA b=len_value COMMA c=attr_name COMMA d = attr_name CLOSE_PAR)
+{
+$node = aggregationNode(str($d.text),'inc',$b.text,$c.text,str($d.text))
+$node.addChildren($a.node)
+$a.node.father.append($node)
+
+premitive_events[str($d.text)] = $node
+}
     ;
 
 time
@@ -206,9 +254,9 @@ limit_filter returns [dic]
     :(e=premitive_event DOT attr=attr_name op=filter_operator v=filter_value)
 {
 $dic = {}
-$dic['op']= $op.op
-$dic['event_name']=$e.text
-$dic['event_attr']=$attr.text
+$dic['op']= str($op.op)
+$dic['event_name']=str($e.text)
+$dic['event_attr']=str($attr.text)
 $dic['value']=$v.v
 }
     |(e=premitive_event DOT attr=attr_name DOT fun=CONTAINS OPEN_PAR  v_str=STRING  CLOSE_PAR)
@@ -271,14 +319,14 @@ len_clause
     :LENWINDOW len_value
     ;
 
-context_clause
-    :CONTEXT context_value
+context_clause returns [context]
+    :CONTEXT a=context_value{$context=$a.text}
     ;
-context_value
-    :CHRONICLE
-    |RECENT
-    |CONTINUOUS
-    |CUMULATIVE
+context_value returns [contextValue]
+    :CHRONICLE{$contextValue='chronicle'}
+    |RECENT{$contextValue='recent'}
+    |CONTINUOUS{$contextValue='recent'}
+    |CUMULATIVE{$contextValue='cumulative'}
     ;
 atom_event_name
     :IDENTIFLER
@@ -353,6 +401,14 @@ num_key:YEAR|MON|DAY|HOUR|MIN|SEC;
  RECENT:R E C E N T;
  CONTINUOUS:C O N T I N U O U S;
  CUMULATIVE:C U M U L A T I V E;
+ //新增操作符
+ AVG:A V G;
+ SUM:S U M;
+ MINOP:M I N;
+ MAX:M A X;
+ COUNT:C O U N T;
+ DEC:D E C;
+ INC:I N C;
  //基本逻辑操作符
  AND:A N D;
  OR:O R;
