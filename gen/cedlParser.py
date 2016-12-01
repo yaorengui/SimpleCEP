@@ -1,4 +1,4 @@
-# Generated from C:/Users/fit/PycharmProjects/CEP/src\cedl.g4 by ANTLR 4.5.1
+# Generated from E:/CEP/src\cedl.g4 by ANTLR 4.5.3
 # encoding: utf-8
 from __future__ import print_function
 from antlr4 import *
@@ -12,7 +12,7 @@ from Queue import Queue, Empty
 def serializedATN():
     with StringIO() as buf:
         buf.write(u"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3")
-        buf.write(u"M\u018d\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t")
+        buf.write(u"T\u01e4\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t")
         buf.write(u"\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r")
         buf.write(u"\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4")
         buf.write(u"\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30")
@@ -30,160 +30,203 @@ def serializedATN():
         buf.write(u"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r")
         buf.write(u"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u00c4\n")
         buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3")
-        buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u00dd")
+        buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3")
+        buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3")
+        buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3")
+        buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3")
+        buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3")
+        buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3")
+        buf.write(u"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u012b")
         buf.write(u"\n\r\3\16\3\16\3\17\3\17\3\20\3\20\3\21\3\21\3\21\3\21")
         buf.write(u"\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3")
-        buf.write(u"\21\3\21\3\21\3\21\5\21\u00f7\n\21\3\22\3\22\3\22\3\22")
+        buf.write(u"\21\3\21\3\21\3\21\5\21\u0145\n\21\3\22\3\22\3\22\3\22")
         buf.write(u"\3\22\3\22\3\23\3\23\3\23\3\24\3\24\3\24\3\24\3\24\3")
-        buf.write(u"\24\7\24\u0108\n\24\f\24\16\24\u010b\13\24\3\25\3\25")
+        buf.write(u"\24\7\24\u0156\n\24\f\24\16\24\u0159\13\24\3\25\3\25")
         buf.write(u"\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3")
         buf.write(u"\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25")
         buf.write(u"\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3")
         buf.write(u"\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25")
-        buf.write(u"\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\5\25\u0141\n")
+        buf.write(u"\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\5\25\u018f\n")
         buf.write(u"\25\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\27")
         buf.write(u"\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3")
-        buf.write(u"\27\3\27\5\27\u0159\n\27\3\30\3\30\3\30\3\30\3\31\3\31")
-        buf.write(u"\3\31\3\32\3\32\3\32\3\33\3\33\3\34\3\34\5\34\u0169\n")
-        buf.write(u"\34\3\35\3\35\5\35\u016d\n\35\3\36\3\36\5\36\u0171\n")
-        buf.write(u"\36\3\37\3\37\5\37\u0175\n\37\3 \3 \5 \u0179\n \3!\3")
-        buf.write(u"!\5!\u017d\n!\3\"\3\"\3#\3#\5#\u0183\n#\3$\3$\3%\3%\3")
+        buf.write(u"\27\3\27\5\27\u01a7\n\27\3\30\3\30\3\30\3\30\3\31\3\31")
+        buf.write(u"\3\31\3\32\3\32\3\32\3\32\3\33\3\33\3\33\3\33\3\33\3")
+        buf.write(u"\33\3\33\3\33\5\33\u01bc\n\33\3\34\3\34\5\34\u01c0\n")
+        buf.write(u"\34\3\35\3\35\5\35\u01c4\n\35\3\36\3\36\5\36\u01c8\n")
+        buf.write(u"\36\3\37\3\37\5\37\u01cc\n\37\3 \3 \5 \u01d0\n \3!\3")
+        buf.write(u"!\5!\u01d4\n!\3\"\3\"\3#\3#\5#\u01da\n#\3$\3$\3%\3%\3")
         buf.write(u"&\3&\3\'\3\'\3\'\2\2(\2\4\6\b\n\f\16\20\22\24\26\30\32")
-        buf.write(u"\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJL\2\t\3\2\6\7\4")
-        buf.write(u"\2??AA\7\2\22\23\26\27\31\31\33\33\35\35\4\2/\6488\3")
-        buf.write(u"\2\16\21\3\2\4$\3\2\',\u018b\2O\3\2\2\2\4S\3\2\2\2\6")
-        buf.write(u"b\3\2\2\2\be\3\2\2\2\nh\3\2\2\2\fk\3\2\2\2\16\u0082\3")
-        buf.write(u"\2\2\2\20\u0084\3\2\2\2\22\u0087\3\2\2\2\24\u0093\3\2")
-        buf.write(u"\2\2\26\u00a6\3\2\2\2\30\u00dc\3\2\2\2\32\u00de\3\2\2")
-        buf.write(u"\2\34\u00e0\3\2\2\2\36\u00e2\3\2\2\2 \u00f6\3\2\2\2\"")
-        buf.write(u"\u00f8\3\2\2\2$\u00fe\3\2\2\2&\u0101\3\2\2\2(\u0140\3")
-        buf.write(u"\2\2\2*\u0142\3\2\2\2,\u0158\3\2\2\2.\u015a\3\2\2\2\60")
-        buf.write(u"\u015e\3\2\2\2\62\u0161\3\2\2\2\64\u0164\3\2\2\2\66\u0168")
-        buf.write(u"\3\2\2\28\u016c\3\2\2\2:\u0170\3\2\2\2<\u0174\3\2\2\2")
-        buf.write(u">\u0178\3\2\2\2@\u017c\3\2\2\2B\u017e\3\2\2\2D\u0182")
-        buf.write(u"\3\2\2\2F\u0184\3\2\2\2H\u0186\3\2\2\2J\u0188\3\2\2\2")
-        buf.write(u"L\u018a\3\2\2\2NP\5\4\3\2ON\3\2\2\2PQ\3\2\2\2QO\3\2\2")
-        buf.write(u"\2QR\3\2\2\2R\3\3\2\2\2ST\5\6\4\2TU\5\n\6\2UW\5\22\n")
-        buf.write(u"\2VX\5$\23\2WV\3\2\2\2WX\3\2\2\2X[\3\2\2\2Y\\\5.\30\2")
-        buf.write(u"Z\\\5\60\31\2[Y\3\2\2\2[Z\3\2\2\2[\\\3\2\2\2\\^\3\2\2")
-        buf.write(u"\2]_\5\62\32\2^]\3\2\2\2^_\3\2\2\2_`\3\2\2\2`a\b\3\1")
-        buf.write(u"\2a\5\3\2\2\2bc\t\2\2\2cd\5\b\5\2d\7\3\2\2\2ef\58\35")
-        buf.write(u"\2fg\b\5\1\2g\t\3\2\2\2hi\7\b\2\2ij\5\f\7\2j\13\3\2\2")
-        buf.write(u"\2kl\5\16\b\2ls\b\7\1\2mn\7F\2\2no\5\16\b\2op\b\7\1\2")
-        buf.write(u"pr\3\2\2\2qm\3\2\2\2ru\3\2\2\2sq\3\2\2\2st\3\2\2\2t\r")
-        buf.write(u"\3\2\2\2us\3\2\2\2vw\5\20\t\2wx\b\b\1\2x\u0083\3\2\2")
-        buf.write(u"\2yz\5\30\r\2z{\b\b\1\2{\u0083\3\2\2\2|}\5\"\22\2}~\b")
-        buf.write(u"\b\1\2~\u0083\3\2\2\2\177\u0080\5 \21\2\u0080\u0081\b")
-        buf.write(u"\b\1\2\u0081\u0083\3\2\2\2\u0082v\3\2\2\2\u0082y\3\2")
-        buf.write(u"\2\2\u0082|\3\2\2\2\u0082\177\3\2\2\2\u0083\17\3\2\2")
-        buf.write(u"\2\u0084\u0085\5\66\34\2\u0085\u0086\b\t\1\2\u0086\21")
-        buf.write(u"\3\2\2\2\u0087\u0088\7\t\2\2\u0088\u0089\5\24\13\2\u0089")
-        buf.write(u"\23\3\2\2\2\u008a\u008b\5\30\r\2\u008b\u008c\b\13\1\2")
-        buf.write(u"\u008c\u0094\3\2\2\2\u008d\u008e\5 \21\2\u008e\u008f")
-        buf.write(u"\b\13\1\2\u008f\u0094\3\2\2\2\u0090\u0091\5\"\22\2\u0091")
-        buf.write(u"\u0092\b\13\1\2\u0092\u0094\3\2\2\2\u0093\u008a\3\2\2")
-        buf.write(u"\2\u0093\u008d\3\2\2\2\u0093\u0090\3\2\2\2\u0094\u00a3")
-        buf.write(u"\3\2\2\2\u0095\u009f\5\26\f\2\u0096\u0097\5\30\r\2\u0097")
-        buf.write(u"\u0098\b\13\1\2\u0098\u00a0\3\2\2\2\u0099\u009a\5 \21")
-        buf.write(u"\2\u009a\u009b\b\13\1\2\u009b\u00a0\3\2\2\2\u009c\u009d")
-        buf.write(u"\5\"\22\2\u009d\u009e\b\13\1\2\u009e\u00a0\3\2\2\2\u009f")
-        buf.write(u"\u0096\3\2\2\2\u009f\u0099\3\2\2\2\u009f\u009c\3\2\2")
-        buf.write(u"\2\u00a0\u00a2\3\2\2\2\u00a1\u0095\3\2\2\2\u00a2\u00a5")
-        buf.write(u"\3\2\2\2\u00a3\u00a1\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4")
-        buf.write(u"\25\3\2\2\2\u00a5\u00a3\3\2\2\2\u00a6\u00a7\t\3\2\2\u00a7")
-        buf.write(u"\27\3\2\2\2\u00a8\u00a9\7\24\2\2\u00a9\u00aa\7B\2\2\u00aa")
-        buf.write(u"\u00ab\5\16\b\2\u00ab\u00ac\7C\2\2\u00ac\u00ad\3\2\2")
-        buf.write(u"\2\u00ad\u00ae\b\r\1\2\u00ae\u00dd\3\2\2\2\u00af\u00b0")
-        buf.write(u"\7\30\2\2\u00b0\u00b1\7B\2\2\u00b1\u00b2\5\16\b\2\u00b2")
-        buf.write(u"\u00b3\7F\2\2\u00b3\u00b4\5@!\2\u00b4\u00b5\7C\2\2\u00b5")
-        buf.write(u"\u00b6\3\2\2\2\u00b6\u00b7\b\r\1\2\u00b7\u00dd\3\2\2")
-        buf.write(u"\2\u00b8\u00b9\7\32\2\2\u00b9\u00ba\7B\2\2\u00ba\u00bb")
-        buf.write(u"\5\16\b\2\u00bb\u00c3\7F\2\2\u00bc\u00bd\5<\37\2\u00bd")
-        buf.write(u"\u00be\5F$\2\u00be\u00c4\3\2\2\2\u00bf\u00c0\5\34\17")
-        buf.write(u"\2\u00c0\u00c1\7F\2\2\u00c1\u00c2\5\36\20\2\u00c2\u00c4")
-        buf.write(u"\3\2\2\2\u00c3\u00bc\3\2\2\2\u00c3\u00bf\3\2\2\2\u00c4")
-        buf.write(u"\u00c5\3\2\2\2\u00c5\u00c6\7C\2\2\u00c6\u00c7\3\2\2\2")
-        buf.write(u"\u00c7\u00c8\b\r\1\2\u00c8\u00dd\3\2\2\2\u00c9\u00ca")
-        buf.write(u"\7\36\2\2\u00ca\u00cb\7B\2\2\u00cb\u00cc\5\16\b\2\u00cc")
-        buf.write(u"\u00cd\7F\2\2\u00cd\u00ce\5<\37\2\u00ce\u00cf\5F$\2\u00cf")
-        buf.write(u"\u00d0\7C\2\2\u00d0\u00d1\3\2\2\2\u00d1\u00d2\b\r\1\2")
-        buf.write(u"\u00d2\u00dd\3\2\2\2\u00d3\u00d4\7\37\2\2\u00d4\u00d5")
-        buf.write(u"\7B\2\2\u00d5\u00d6\5\16\b\2\u00d6\u00d7\7F\2\2\u00d7")
-        buf.write(u"\u00d8\5\32\16\2\u00d8\u00d9\7C\2\2\u00d9\u00da\3\2\2")
-        buf.write(u"\2\u00da\u00db\b\r\1\2\u00db\u00dd\3\2\2\2\u00dc\u00a8")
-        buf.write(u"\3\2\2\2\u00dc\u00af\3\2\2\2\u00dc\u00b8\3\2\2\2\u00dc")
-        buf.write(u"\u00c9\3\2\2\2\u00dc\u00d3\3\2\2\2\u00dd\31\3\2\2\2\u00de")
-        buf.write(u"\u00df\7&\2\2\u00df\33\3\2\2\2\u00e0\u00e1\5\32\16\2")
-        buf.write(u"\u00e1\35\3\2\2\2\u00e2\u00e3\5\32\16\2\u00e3\37\3\2")
-        buf.write(u"\2\2\u00e4\u00e5\7\25\2\2\u00e5\u00e6\7B\2\2\u00e6\u00e7")
-        buf.write(u"\5\16\b\2\u00e7\u00e8\7F\2\2\u00e8\u00e9\5\16\b\2\u00e9")
-        buf.write(u"\u00ea\7C\2\2\u00ea\u00eb\3\2\2\2\u00eb\u00ec\b\21\1")
-        buf.write(u"\2\u00ec\u00f7\3\2\2\2\u00ed\u00ee\7\34\2\2\u00ee\u00ef")
-        buf.write(u"\7B\2\2\u00ef\u00f0\5\16\b\2\u00f0\u00f1\7F\2\2\u00f1")
-        buf.write(u"\u00f2\5\16\b\2\u00f2\u00f3\7C\2\2\u00f3\u00f4\3\2\2")
-        buf.write(u"\2\u00f4\u00f5\b\21\1\2\u00f5\u00f7\3\2\2\2\u00f6\u00e4")
-        buf.write(u"\3\2\2\2\u00f6\u00ed\3\2\2\2\u00f7!\3\2\2\2\u00f8\u00f9")
-        buf.write(u"\t\4\2\2\u00f9\u00fa\7B\2\2\u00fa\u00fb\5\f\7\2\u00fb")
-        buf.write(u"\u00fc\7C\2\2\u00fc\u00fd\b\22\1\2\u00fd#\3\2\2\2\u00fe")
-        buf.write(u"\u00ff\7\n\2\2\u00ff\u0100\5&\24\2\u0100%\3\2\2\2\u0101")
-        buf.write(u"\u0102\5(\25\2\u0102\u0109\b\24\1\2\u0103\u0104\7\22")
-        buf.write(u"\2\2\u0104\u0105\5(\25\2\u0105\u0106\b\24\1\2\u0106\u0108")
-        buf.write(u"\3\2\2\2\u0107\u0103\3\2\2\2\u0108\u010b\3\2\2\2\u0109")
-        buf.write(u"\u0107\3\2\2\2\u0109\u010a\3\2\2\2\u010a\'\3\2\2\2\u010b")
-        buf.write(u"\u0109\3\2\2\2\u010c\u010d\5\20\t\2\u010d\u010e\7H\2")
-        buf.write(u"\2\u010e\u010f\5:\36\2\u010f\u0110\5*\26\2\u0110\u0111")
-        buf.write(u"\5,\27\2\u0111\u0112\3\2\2\2\u0112\u0113\b\25\1\2\u0113")
-        buf.write(u"\u0141\3\2\2\2\u0114\u0115\5\20\t\2\u0115\u0116\7H\2")
-        buf.write(u"\2\u0116\u0117\5:\36\2\u0117\u0118\7H\2\2\u0118\u0119")
-        buf.write(u"\7 \2\2\u0119\u011a\7B\2\2\u011a\u011b\7K\2\2\u011b\u011c")
-        buf.write(u"\7C\2\2\u011c\u011d\3\2\2\2\u011d\u011e\b\25\1\2\u011e")
-        buf.write(u"\u0141\3\2\2\2\u011f\u0120\5\20\t\2\u0120\u0121\7H\2")
-        buf.write(u"\2\u0121\u0122\5:\36\2\u0122\u0123\7H\2\2\u0123\u0124")
-        buf.write(u"\7\"\2\2\u0124\u0125\7B\2\2\u0125\u0126\7K\2\2\u0126")
-        buf.write(u"\u0127\7C\2\2\u0127\u0128\3\2\2\2\u0128\u0129\b\25\1")
-        buf.write(u"\2\u0129\u0141\3\2\2\2\u012a\u012b\5\20\t\2\u012b\u012c")
-        buf.write(u"\7H\2\2\u012c\u012d\5:\36\2\u012d\u012e\7H\2\2\u012e")
-        buf.write(u"\u012f\7!\2\2\u012f\u0130\7B\2\2\u0130\u0131\7K\2\2\u0131")
-        buf.write(u"\u0132\7C\2\2\u0132\u0133\3\2\2\2\u0133\u0134\b\25\1")
-        buf.write(u"\2\u0134\u0141\3\2\2\2\u0135\u0136\5\20\t\2\u0136\u0137")
-        buf.write(u"\7H\2\2\u0137\u0138\5:\36\2\u0138\u0139\7H\2\2\u0139")
-        buf.write(u"\u013a\7#\2\2\u013a\u013b\7B\2\2\u013b\u013c\7K\2\2\u013c")
-        buf.write(u"\u013d\7C\2\2\u013d\u013e\3\2\2\2\u013e\u013f\b\25\1")
-        buf.write(u"\2\u013f\u0141\3\2\2\2\u0140\u010c\3\2\2\2\u0140\u0114")
-        buf.write(u"\3\2\2\2\u0140\u011f\3\2\2\2\u0140\u012a\3\2\2\2\u0140")
-        buf.write(u"\u0135\3\2\2\2\u0141)\3\2\2\2\u0142\u0143\t\5\2\2\u0143")
-        buf.write(u"\u0144\b\26\1\2\u0144+\3\2\2\2\u0145\u0146\7\4\2\2\u0146")
-        buf.write(u"\u0159\b\27\1\2\u0147\u0148\7\5\2\2\u0148\u0159\b\27")
-        buf.write(u"\1\2\u0149\u014a\7J\2\2\u014a\u014b\5\20\t\2\u014b\u014c")
-        buf.write(u"\7H\2\2\u014c\u014d\5:\36\2\u014d\u014e\3\2\2\2\u014e")
-        buf.write(u"\u014f\b\27\1\2\u014f\u0159\3\2\2\2\u0150\u0151\5B\"")
-        buf.write(u"\2\u0151\u0152\b\27\1\2\u0152\u0159\3\2\2\2\u0153\u0154")
-        buf.write(u"\5D#\2\u0154\u0155\b\27\1\2\u0155\u0159\3\2\2\2\u0156")
-        buf.write(u"\u0157\7K\2\2\u0157\u0159\b\27\1\2\u0158\u0145\3\2\2")
-        buf.write(u"\2\u0158\u0147\3\2\2\2\u0158\u0149\3\2\2\2\u0158\u0150")
-        buf.write(u"\3\2\2\2\u0158\u0153\3\2\2\2\u0158\u0156\3\2\2\2\u0159")
-        buf.write(u"-\3\2\2\2\u015a\u015b\7\13\2\2\u015b\u015c\5<\37\2\u015c")
-        buf.write(u"\u015d\5F$\2\u015d/\3\2\2\2\u015e\u015f\7\f\2\2\u015f")
-        buf.write(u"\u0160\5> \2\u0160\61\3\2\2\2\u0161\u0162\7\r\2\2\u0162")
-        buf.write(u"\u0163\5\64\33\2\u0163\63\3\2\2\2\u0164\u0165\t\6\2\2")
-        buf.write(u"\u0165\65\3\2\2\2\u0166\u0169\7%\2\2\u0167\u0169\5J&")
-        buf.write(u"\2\u0168\u0166\3\2\2\2\u0168\u0167\3\2\2\2\u0169\67\3")
-        buf.write(u"\2\2\2\u016a\u016d\7%\2\2\u016b\u016d\5J&\2\u016c\u016a")
-        buf.write(u"\3\2\2\2\u016c\u016b\3\2\2\2\u016d9\3\2\2\2\u016e\u0171")
-        buf.write(u"\7%\2\2\u016f\u0171\5J&\2\u0170\u016e\3\2\2\2\u0170\u016f")
-        buf.write(u"\3\2\2\2\u0171;\3\2\2\2\u0172\u0175\7-\2\2\u0173\u0175")
-        buf.write(u"\5L\'\2\u0174\u0172\3\2\2\2\u0174\u0173\3\2\2\2\u0175")
-        buf.write(u"=\3\2\2\2\u0176\u0179\7-\2\2\u0177\u0179\5L\'\2\u0178")
-        buf.write(u"\u0176\3\2\2\2\u0178\u0177\3\2\2\2\u0179?\3\2\2\2\u017a")
-        buf.write(u"\u017d\5<\37\2\u017b\u017d\5> \2\u017c\u017a\3\2\2\2")
-        buf.write(u"\u017c\u017b\3\2\2\2\u017dA\3\2\2\2\u017e\u017f\5@!\2")
-        buf.write(u"\u017fC\3\2\2\2\u0180\u0183\7.\2\2\u0181\u0183\5B\"\2")
-        buf.write(u"\u0182\u0180\3\2\2\2\u0182\u0181\3\2\2\2\u0183E\3\2\2")
-        buf.write(u"\2\u0184\u0185\7$\2\2\u0185G\3\2\2\2\u0186\u0187\7.\2")
-        buf.write(u"\2\u0187I\3\2\2\2\u0188\u0189\t\7\2\2\u0189K\3\2\2\2")
-        buf.write(u"\u018a\u018b\t\b\2\2\u018bM\3\2\2\2\30QW[^s\u0082\u0093")
-        buf.write(u"\u009f\u00a3\u00c3\u00dc\u00f6\u0109\u0140\u0158\u0168")
-        buf.write(u"\u016c\u0170\u0174\u0178\u017c\u0182")
+        buf.write(u"\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJL\2\b\3\2\6\7\4")
+        buf.write(u"\2FFHH\7\2\31\32\35\36  \"\"$$\4\2\66;??\4\2\4\21\31")
+        buf.write(u"+\3\2.\63\u01eb\2O\3\2\2\2\4S\3\2\2\2\6b\3\2\2\2\be\3")
+        buf.write(u"\2\2\2\nh\3\2\2\2\fk\3\2\2\2\16\u0082\3\2\2\2\20\u0084")
+        buf.write(u"\3\2\2\2\22\u0087\3\2\2\2\24\u0093\3\2\2\2\26\u00a6\3")
+        buf.write(u"\2\2\2\30\u012a\3\2\2\2\32\u012c\3\2\2\2\34\u012e\3\2")
+        buf.write(u"\2\2\36\u0130\3\2\2\2 \u0144\3\2\2\2\"\u0146\3\2\2\2")
+        buf.write(u"$\u014c\3\2\2\2&\u014f\3\2\2\2(\u018e\3\2\2\2*\u0190")
+        buf.write(u"\3\2\2\2,\u01a6\3\2\2\2.\u01a8\3\2\2\2\60\u01ac\3\2\2")
+        buf.write(u"\2\62\u01af\3\2\2\2\64\u01bb\3\2\2\2\66\u01bf\3\2\2\2")
+        buf.write(u"8\u01c3\3\2\2\2:\u01c7\3\2\2\2<\u01cb\3\2\2\2>\u01cf")
+        buf.write(u"\3\2\2\2@\u01d3\3\2\2\2B\u01d5\3\2\2\2D\u01d9\3\2\2\2")
+        buf.write(u"F\u01db\3\2\2\2H\u01dd\3\2\2\2J\u01df\3\2\2\2L\u01e1")
+        buf.write(u"\3\2\2\2NP\5\4\3\2ON\3\2\2\2PQ\3\2\2\2QO\3\2\2\2QR\3")
+        buf.write(u"\2\2\2R\3\3\2\2\2ST\5\6\4\2TU\5\n\6\2UW\5\22\n\2VX\5")
+        buf.write(u"$\23\2WV\3\2\2\2WX\3\2\2\2X[\3\2\2\2Y\\\5.\30\2Z\\\5")
+        buf.write(u"\60\31\2[Y\3\2\2\2[Z\3\2\2\2[\\\3\2\2\2\\^\3\2\2\2]_")
+        buf.write(u"\5\62\32\2^]\3\2\2\2^_\3\2\2\2_`\3\2\2\2`a\b\3\1\2a\5")
+        buf.write(u"\3\2\2\2bc\t\2\2\2cd\5\b\5\2d\7\3\2\2\2ef\58\35\2fg\b")
+        buf.write(u"\5\1\2g\t\3\2\2\2hi\7\b\2\2ij\5\f\7\2j\13\3\2\2\2kl\5")
+        buf.write(u"\16\b\2ls\b\7\1\2mn\7M\2\2no\5\16\b\2op\b\7\1\2pr\3\2")
+        buf.write(u"\2\2qm\3\2\2\2ru\3\2\2\2sq\3\2\2\2st\3\2\2\2t\r\3\2\2")
+        buf.write(u"\2us\3\2\2\2vw\5\20\t\2wx\b\b\1\2x\u0083\3\2\2\2yz\5")
+        buf.write(u"\30\r\2z{\b\b\1\2{\u0083\3\2\2\2|}\5\"\22\2}~\b\b\1\2")
+        buf.write(u"~\u0083\3\2\2\2\177\u0080\5 \21\2\u0080\u0081\b\b\1\2")
+        buf.write(u"\u0081\u0083\3\2\2\2\u0082v\3\2\2\2\u0082y\3\2\2\2\u0082")
+        buf.write(u"|\3\2\2\2\u0082\177\3\2\2\2\u0083\17\3\2\2\2\u0084\u0085")
+        buf.write(u"\5\66\34\2\u0085\u0086\b\t\1\2\u0086\21\3\2\2\2\u0087")
+        buf.write(u"\u0088\7\t\2\2\u0088\u0089\5\24\13\2\u0089\23\3\2\2\2")
+        buf.write(u"\u008a\u008b\5\30\r\2\u008b\u008c\b\13\1\2\u008c\u0094")
+        buf.write(u"\3\2\2\2\u008d\u008e\5 \21\2\u008e\u008f\b\13\1\2\u008f")
+        buf.write(u"\u0094\3\2\2\2\u0090\u0091\5\"\22\2\u0091\u0092\b\13")
+        buf.write(u"\1\2\u0092\u0094\3\2\2\2\u0093\u008a\3\2\2\2\u0093\u008d")
+        buf.write(u"\3\2\2\2\u0093\u0090\3\2\2\2\u0094\u00a3\3\2\2\2\u0095")
+        buf.write(u"\u009f\5\26\f\2\u0096\u0097\5\30\r\2\u0097\u0098\b\13")
+        buf.write(u"\1\2\u0098\u00a0\3\2\2\2\u0099\u009a\5 \21\2\u009a\u009b")
+        buf.write(u"\b\13\1\2\u009b\u00a0\3\2\2\2\u009c\u009d\5\"\22\2\u009d")
+        buf.write(u"\u009e\b\13\1\2\u009e\u00a0\3\2\2\2\u009f\u0096\3\2\2")
+        buf.write(u"\2\u009f\u0099\3\2\2\2\u009f\u009c\3\2\2\2\u00a0\u00a2")
+        buf.write(u"\3\2\2\2\u00a1\u0095\3\2\2\2\u00a2\u00a5\3\2\2\2\u00a3")
+        buf.write(u"\u00a1\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4\25\3\2\2\2\u00a5")
+        buf.write(u"\u00a3\3\2\2\2\u00a6\u00a7\t\3\2\2\u00a7\27\3\2\2\2\u00a8")
+        buf.write(u"\u00a9\7\33\2\2\u00a9\u00aa\7I\2\2\u00aa\u00ab\5\16\b")
+        buf.write(u"\2\u00ab\u00ac\7J\2\2\u00ac\u00ad\3\2\2\2\u00ad\u00ae")
+        buf.write(u"\b\r\1\2\u00ae\u012b\3\2\2\2\u00af\u00b0\7\37\2\2\u00b0")
+        buf.write(u"\u00b1\7I\2\2\u00b1\u00b2\5\16\b\2\u00b2\u00b3\7M\2\2")
+        buf.write(u"\u00b3\u00b4\5@!\2\u00b4\u00b5\7J\2\2\u00b5\u00b6\3\2")
+        buf.write(u"\2\2\u00b6\u00b7\b\r\1\2\u00b7\u012b\3\2\2\2\u00b8\u00b9")
+        buf.write(u"\7!\2\2\u00b9\u00ba\7I\2\2\u00ba\u00bb\5\16\b\2\u00bb")
+        buf.write(u"\u00c3\7M\2\2\u00bc\u00bd\5<\37\2\u00bd\u00be\5F$\2\u00be")
+        buf.write(u"\u00c4\3\2\2\2\u00bf\u00c0\5\34\17\2\u00c0\u00c1\7M\2")
+        buf.write(u"\2\u00c1\u00c2\5\36\20\2\u00c2\u00c4\3\2\2\2\u00c3\u00bc")
+        buf.write(u"\3\2\2\2\u00c3\u00bf\3\2\2\2\u00c4\u00c5\3\2\2\2\u00c5")
+        buf.write(u"\u00c6\7J\2\2\u00c6\u00c7\3\2\2\2\u00c7\u00c8\b\r\1\2")
+        buf.write(u"\u00c8\u012b\3\2\2\2\u00c9\u00ca\7%\2\2\u00ca\u00cb\7")
+        buf.write(u"I\2\2\u00cb\u00cc\5\16\b\2\u00cc\u00cd\7M\2\2\u00cd\u00ce")
+        buf.write(u"\5<\37\2\u00ce\u00cf\5F$\2\u00cf\u00d0\7J\2\2\u00d0\u00d1")
+        buf.write(u"\3\2\2\2\u00d1\u00d2\b\r\1\2\u00d2\u012b\3\2\2\2\u00d3")
+        buf.write(u"\u00d4\7&\2\2\u00d4\u00d5\7I\2\2\u00d5\u00d6\5\16\b\2")
+        buf.write(u"\u00d6\u00d7\7M\2\2\u00d7\u00d8\5\32\16\2\u00d8\u00d9")
+        buf.write(u"\7J\2\2\u00d9\u00da\3\2\2\2\u00da\u00db\b\r\1\2\u00db")
+        buf.write(u"\u012b\3\2\2\2\u00dc\u00dd\7\22\2\2\u00dd\u00de\7I\2")
+        buf.write(u"\2\u00de\u00df\5\16\b\2\u00df\u00e0\7M\2\2\u00e0\u00e1")
+        buf.write(u"\5> \2\u00e1\u00e2\7M\2\2\u00e2\u00e3\5:\36\2\u00e3\u00e4")
+        buf.write(u"\7M\2\2\u00e4\u00e5\5:\36\2\u00e5\u00e6\7J\2\2\u00e6")
+        buf.write(u"\u00e7\3\2\2\2\u00e7\u00e8\b\r\1\2\u00e8\u012b\3\2\2")
+        buf.write(u"\2\u00e9\u00ea\7\23\2\2\u00ea\u00eb\7I\2\2\u00eb\u00ec")
+        buf.write(u"\5\16\b\2\u00ec\u00ed\7M\2\2\u00ed\u00ee\5> \2\u00ee")
+        buf.write(u"\u00ef\7M\2\2\u00ef\u00f0\5:\36\2\u00f0\u00f1\7M\2\2")
+        buf.write(u"\u00f1\u00f2\5:\36\2\u00f2\u00f3\7J\2\2\u00f3\u00f4\3")
+        buf.write(u"\2\2\2\u00f4\u00f5\b\r\1\2\u00f5\u012b\3\2\2\2\u00f6")
+        buf.write(u"\u00f7\7\24\2\2\u00f7\u00f8\7I\2\2\u00f8\u00f9\5\16\b")
+        buf.write(u"\2\u00f9\u00fa\7M\2\2\u00fa\u00fb\5> \2\u00fb\u00fc\7")
+        buf.write(u"M\2\2\u00fc\u00fd\5:\36\2\u00fd\u00fe\7M\2\2\u00fe\u00ff")
+        buf.write(u"\5:\36\2\u00ff\u0100\7J\2\2\u0100\u0101\3\2\2\2\u0101")
+        buf.write(u"\u0102\b\r\1\2\u0102\u012b\3\2\2\2\u0103\u0104\7\25\2")
+        buf.write(u"\2\u0104\u0105\7I\2\2\u0105\u0106\5\16\b\2\u0106\u0107")
+        buf.write(u"\7M\2\2\u0107\u0108\5> \2\u0108\u0109\7M\2\2\u0109\u010a")
+        buf.write(u"\5:\36\2\u010a\u010b\7M\2\2\u010b\u010c\5:\36\2\u010c")
+        buf.write(u"\u010d\7J\2\2\u010d\u010e\3\2\2\2\u010e\u010f\b\r\1\2")
+        buf.write(u"\u010f\u012b\3\2\2\2\u0110\u0111\7\27\2\2\u0111\u0112")
+        buf.write(u"\7I\2\2\u0112\u0113\5\16\b\2\u0113\u0114\7M\2\2\u0114")
+        buf.write(u"\u0115\5> \2\u0115\u0116\7M\2\2\u0116\u0117\5:\36\2\u0117")
+        buf.write(u"\u0118\7M\2\2\u0118\u0119\5:\36\2\u0119\u011a\7J\2\2")
+        buf.write(u"\u011a\u011b\3\2\2\2\u011b\u011c\b\r\1\2\u011c\u012b")
+        buf.write(u"\3\2\2\2\u011d\u011e\7\30\2\2\u011e\u011f\7I\2\2\u011f")
+        buf.write(u"\u0120\5\16\b\2\u0120\u0121\7M\2\2\u0121\u0122\5> \2")
+        buf.write(u"\u0122\u0123\7M\2\2\u0123\u0124\5:\36\2\u0124\u0125\7")
+        buf.write(u"M\2\2\u0125\u0126\5:\36\2\u0126\u0127\7J\2\2\u0127\u0128")
+        buf.write(u"\3\2\2\2\u0128\u0129\b\r\1\2\u0129\u012b\3\2\2\2\u012a")
+        buf.write(u"\u00a8\3\2\2\2\u012a\u00af\3\2\2\2\u012a\u00b8\3\2\2")
+        buf.write(u"\2\u012a\u00c9\3\2\2\2\u012a\u00d3\3\2\2\2\u012a\u00dc")
+        buf.write(u"\3\2\2\2\u012a\u00e9\3\2\2\2\u012a\u00f6\3\2\2\2\u012a")
+        buf.write(u"\u0103\3\2\2\2\u012a\u0110\3\2\2\2\u012a\u011d\3\2\2")
+        buf.write(u"\2\u012b\31\3\2\2\2\u012c\u012d\7-\2\2\u012d\33\3\2\2")
+        buf.write(u"\2\u012e\u012f\5\32\16\2\u012f\35\3\2\2\2\u0130\u0131")
+        buf.write(u"\5\32\16\2\u0131\37\3\2\2\2\u0132\u0133\7\34\2\2\u0133")
+        buf.write(u"\u0134\7I\2\2\u0134\u0135\5\16\b\2\u0135\u0136\7M\2\2")
+        buf.write(u"\u0136\u0137\5\16\b\2\u0137\u0138\7J\2\2\u0138\u0139")
+        buf.write(u"\3\2\2\2\u0139\u013a\b\21\1\2\u013a\u0145\3\2\2\2\u013b")
+        buf.write(u"\u013c\7#\2\2\u013c\u013d\7I\2\2\u013d\u013e\5\16\b\2")
+        buf.write(u"\u013e\u013f\7M\2\2\u013f\u0140\5\16\b\2\u0140\u0141")
+        buf.write(u"\7J\2\2\u0141\u0142\3\2\2\2\u0142\u0143\b\21\1\2\u0143")
+        buf.write(u"\u0145\3\2\2\2\u0144\u0132\3\2\2\2\u0144\u013b\3\2\2")
+        buf.write(u"\2\u0145!\3\2\2\2\u0146\u0147\t\4\2\2\u0147\u0148\7I")
+        buf.write(u"\2\2\u0148\u0149\5\f\7\2\u0149\u014a\7J\2\2\u014a\u014b")
+        buf.write(u"\b\22\1\2\u014b#\3\2\2\2\u014c\u014d\7\n\2\2\u014d\u014e")
+        buf.write(u"\5&\24\2\u014e%\3\2\2\2\u014f\u0150\5(\25\2\u0150\u0157")
+        buf.write(u"\b\24\1\2\u0151\u0152\7\31\2\2\u0152\u0153\5(\25\2\u0153")
+        buf.write(u"\u0154\b\24\1\2\u0154\u0156\3\2\2\2\u0155\u0151\3\2\2")
+        buf.write(u"\2\u0156\u0159\3\2\2\2\u0157\u0155\3\2\2\2\u0157\u0158")
+        buf.write(u"\3\2\2\2\u0158\'\3\2\2\2\u0159\u0157\3\2\2\2\u015a\u015b")
+        buf.write(u"\5\20\t\2\u015b\u015c\7O\2\2\u015c\u015d\5:\36\2\u015d")
+        buf.write(u"\u015e\5*\26\2\u015e\u015f\5,\27\2\u015f\u0160\3\2\2")
+        buf.write(u"\2\u0160\u0161\b\25\1\2\u0161\u018f\3\2\2\2\u0162\u0163")
+        buf.write(u"\5\20\t\2\u0163\u0164\7O\2\2\u0164\u0165\5:\36\2\u0165")
+        buf.write(u"\u0166\7O\2\2\u0166\u0167\7\'\2\2\u0167\u0168\7I\2\2")
+        buf.write(u"\u0168\u0169\7R\2\2\u0169\u016a\7J\2\2\u016a\u016b\3")
+        buf.write(u"\2\2\2\u016b\u016c\b\25\1\2\u016c\u018f\3\2\2\2\u016d")
+        buf.write(u"\u016e\5\20\t\2\u016e\u016f\7O\2\2\u016f\u0170\5:\36")
+        buf.write(u"\2\u0170\u0171\7O\2\2\u0171\u0172\7)\2\2\u0172\u0173")
+        buf.write(u"\7I\2\2\u0173\u0174\7R\2\2\u0174\u0175\7J\2\2\u0175\u0176")
+        buf.write(u"\3\2\2\2\u0176\u0177\b\25\1\2\u0177\u018f\3\2\2\2\u0178")
+        buf.write(u"\u0179\5\20\t\2\u0179\u017a\7O\2\2\u017a\u017b\5:\36")
+        buf.write(u"\2\u017b\u017c\7O\2\2\u017c\u017d\7(\2\2\u017d\u017e")
+        buf.write(u"\7I\2\2\u017e\u017f\7R\2\2\u017f\u0180\7J\2\2\u0180\u0181")
+        buf.write(u"\3\2\2\2\u0181\u0182\b\25\1\2\u0182\u018f\3\2\2\2\u0183")
+        buf.write(u"\u0184\5\20\t\2\u0184\u0185\7O\2\2\u0185\u0186\5:\36")
+        buf.write(u"\2\u0186\u0187\7O\2\2\u0187\u0188\7*\2\2\u0188\u0189")
+        buf.write(u"\7I\2\2\u0189\u018a\7R\2\2\u018a\u018b\7J\2\2\u018b\u018c")
+        buf.write(u"\3\2\2\2\u018c\u018d\b\25\1\2\u018d\u018f\3\2\2\2\u018e")
+        buf.write(u"\u015a\3\2\2\2\u018e\u0162\3\2\2\2\u018e\u016d\3\2\2")
+        buf.write(u"\2\u018e\u0178\3\2\2\2\u018e\u0183\3\2\2\2\u018f)\3\2")
+        buf.write(u"\2\2\u0190\u0191\t\5\2\2\u0191\u0192\b\26\1\2\u0192+")
+        buf.write(u"\3\2\2\2\u0193\u0194\7\4\2\2\u0194\u01a7\b\27\1\2\u0195")
+        buf.write(u"\u0196\7\5\2\2\u0196\u01a7\b\27\1\2\u0197\u0198\7Q\2")
+        buf.write(u"\2\u0198\u0199\5\20\t\2\u0199\u019a\7O\2\2\u019a\u019b")
+        buf.write(u"\5:\36\2\u019b\u019c\3\2\2\2\u019c\u019d\b\27\1\2\u019d")
+        buf.write(u"\u01a7\3\2\2\2\u019e\u019f\5B\"\2\u019f\u01a0\b\27\1")
+        buf.write(u"\2\u01a0\u01a7\3\2\2\2\u01a1\u01a2\5D#\2\u01a2\u01a3")
+        buf.write(u"\b\27\1\2\u01a3\u01a7\3\2\2\2\u01a4\u01a5\7R\2\2\u01a5")
+        buf.write(u"\u01a7\b\27\1\2\u01a6\u0193\3\2\2\2\u01a6\u0195\3\2\2")
+        buf.write(u"\2\u01a6\u0197\3\2\2\2\u01a6\u019e\3\2\2\2\u01a6\u01a1")
+        buf.write(u"\3\2\2\2\u01a6\u01a4\3\2\2\2\u01a7-\3\2\2\2\u01a8\u01a9")
+        buf.write(u"\7\13\2\2\u01a9\u01aa\5<\37\2\u01aa\u01ab\5F$\2\u01ab")
+        buf.write(u"/\3\2\2\2\u01ac\u01ad\7\f\2\2\u01ad\u01ae\5> \2\u01ae")
+        buf.write(u"\61\3\2\2\2\u01af\u01b0\7\r\2\2\u01b0\u01b1\5\64\33\2")
+        buf.write(u"\u01b1\u01b2\b\32\1\2\u01b2\63\3\2\2\2\u01b3\u01b4\7")
+        buf.write(u"\16\2\2\u01b4\u01bc\b\33\1\2\u01b5\u01b6\7\17\2\2\u01b6")
+        buf.write(u"\u01bc\b\33\1\2\u01b7\u01b8\7\20\2\2\u01b8\u01bc\b\33")
+        buf.write(u"\1\2\u01b9\u01ba\7\21\2\2\u01ba\u01bc\b\33\1\2\u01bb")
+        buf.write(u"\u01b3\3\2\2\2\u01bb\u01b5\3\2\2\2\u01bb\u01b7\3\2\2")
+        buf.write(u"\2\u01bb\u01b9\3\2\2\2\u01bc\65\3\2\2\2\u01bd\u01c0\7")
+        buf.write(u",\2\2\u01be\u01c0\5J&\2\u01bf\u01bd\3\2\2\2\u01bf\u01be")
+        buf.write(u"\3\2\2\2\u01c0\67\3\2\2\2\u01c1\u01c4\7,\2\2\u01c2\u01c4")
+        buf.write(u"\5J&\2\u01c3\u01c1\3\2\2\2\u01c3\u01c2\3\2\2\2\u01c4")
+        buf.write(u"9\3\2\2\2\u01c5\u01c8\7,\2\2\u01c6\u01c8\5J&\2\u01c7")
+        buf.write(u"\u01c5\3\2\2\2\u01c7\u01c6\3\2\2\2\u01c8;\3\2\2\2\u01c9")
+        buf.write(u"\u01cc\7\64\2\2\u01ca\u01cc\5L\'\2\u01cb\u01c9\3\2\2")
+        buf.write(u"\2\u01cb\u01ca\3\2\2\2\u01cc=\3\2\2\2\u01cd\u01d0\7\64")
+        buf.write(u"\2\2\u01ce\u01d0\5L\'\2\u01cf\u01cd\3\2\2\2\u01cf\u01ce")
+        buf.write(u"\3\2\2\2\u01d0?\3\2\2\2\u01d1\u01d4\5<\37\2\u01d2\u01d4")
+        buf.write(u"\5> \2\u01d3\u01d1\3\2\2\2\u01d3\u01d2\3\2\2\2\u01d4")
+        buf.write(u"A\3\2\2\2\u01d5\u01d6\5@!\2\u01d6C\3\2\2\2\u01d7\u01da")
+        buf.write(u"\7\65\2\2\u01d8\u01da\5B\"\2\u01d9\u01d7\3\2\2\2\u01d9")
+        buf.write(u"\u01d8\3\2\2\2\u01daE\3\2\2\2\u01db\u01dc\7+\2\2\u01dc")
+        buf.write(u"G\3\2\2\2\u01dd\u01de\7\65\2\2\u01deI\3\2\2\2\u01df\u01e0")
+        buf.write(u"\t\6\2\2\u01e0K\3\2\2\2\u01e1\u01e2\t\7\2\2\u01e2M\3")
+        buf.write(u"\2\2\2\31QW[^s\u0082\u0093\u009f\u00a3\u00c3\u012a\u0144")
+        buf.write(u"\u0157\u018e\u01a6\u01bb\u01bf\u01c3\u01c7\u01cb\u01cf")
+        buf.write(u"\u01d3\u01d9")
         return buf.getvalue()
 
 
@@ -208,16 +251,19 @@ class cedlParser ( Parser ):
                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                     u"<INVALID>", u"'<'", u"'<='", u"'>'", u"'>='", u"'='", 
-                     u"'!='", u"'<<'", u"'>>'", u"'=='", u"'<>'", u"'+'", 
-                     u"'-'", u"'*'", u"'/'", u"'%'", u"'&'", u"'&&'", u"'|'", 
-                     u"'||'", u"'('", u"')'", u"'{'", u"'}'", u"','", u"';'", 
-                     u"'.'", u"'~'", u"'$'" ]
+                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
+                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
+                     u"'<'", u"'<='", u"'>'", u"'>='", u"'='", u"'!='", 
+                     u"'<<'", u"'>>'", u"'=='", u"'<>'", u"'+'", u"'-'", 
+                     u"'*'", u"'/'", u"'%'", u"'&'", u"'&&'", u"'|'", u"'||'", 
+                     u"'('", u"')'", u"'{'", u"'}'", u"','", u"';'", u"'.'", 
+                     u"'~'", u"'$'" ]
 
     symbolicNames = [ u"<INVALID>", u"WS", u"TRUE", u"FALSE", u"SELECT", 
                       u"DEFINE", u"FROM", u"PATTERN", u"LIMIT", u"TIMEWINDOW", 
                       u"LENWINDOW", u"CONTEXT", u"CHRONICLE", u"RECENT", 
-                      u"CONTINUOUS", u"CUMULATIVE", u"AND", u"OR", u"NOT", 
+                      u"CONTINUOUS", u"CUMULATIVE", u"AVG", u"SUM", u"MINOP", 
+                      u"MAX", u"COUNT", u"DEC", u"INC", u"AND", u"OR", u"NOT", 
                       u"XOR", u"NAND", u"NOR", u"REPEAT", u"SEQ", u"WITHIN", 
                       u"FOLLOWBY", u"DURING", u"EQUAL", u"INTERVAL", u"AT", 
                       u"CONTAINS", u"COMPARETO", u"EQUALS", u"MATCHES", 
@@ -297,70 +343,77 @@ class cedlParser ( Parser ):
     RECENT=13
     CONTINUOUS=14
     CUMULATIVE=15
-    AND=16
-    OR=17
-    NOT=18
-    XOR=19
-    NAND=20
-    NOR=21
-    REPEAT=22
-    SEQ=23
-    WITHIN=24
-    FOLLOWBY=25
-    DURING=26
-    EQUAL=27
-    INTERVAL=28
-    AT=29
-    CONTAINS=30
-    COMPARETO=31
-    EQUALS=32
-    MATCHES=33
-    TIME_UNIT=34
-    IDENTIFLER=35
-    TIME_COMPLETE=36
-    YEAR=37
-    MON=38
-    DAY=39
-    HOUR=40
-    MIN=41
-    SEC=42
-    INT=43
-    NUMERIC=44
-    LT=45
-    LT_EQ=46
-    GT=47
-    GT_EQ=48
-    EQ=49
-    NOT_EQ1=50
-    LT2=51
-    GT2=52
-    EQ2=53
-    NOT_EQ2=54
-    PLUS=55
-    MINUS=56
-    STAR=57
-    DIV=58
-    MOD=59
-    AMP=60
-    AMP2=61
-    PIPE=62
-    PIPE2=63
-    OPEN_PAR=64
-    CLOSE_PAR=65
-    OPEN_CURLY=66
-    CLOSE_CURLY=67
-    COMMA=68
-    SCOL=69
-    DOT=70
-    TILDE=71
-    DOLLAR=72
-    STRING=73
-    SINGLE_LINE_COMMENT=74
-    MULTI_LINE_COMMENT=75
+    AVG=16
+    SUM=17
+    MINOP=18
+    MAX=19
+    COUNT=20
+    DEC=21
+    INC=22
+    AND=23
+    OR=24
+    NOT=25
+    XOR=26
+    NAND=27
+    NOR=28
+    REPEAT=29
+    SEQ=30
+    WITHIN=31
+    FOLLOWBY=32
+    DURING=33
+    EQUAL=34
+    INTERVAL=35
+    AT=36
+    CONTAINS=37
+    COMPARETO=38
+    EQUALS=39
+    MATCHES=40
+    TIME_UNIT=41
+    IDENTIFLER=42
+    TIME_COMPLETE=43
+    YEAR=44
+    MON=45
+    DAY=46
+    HOUR=47
+    MIN=48
+    SEC=49
+    INT=50
+    NUMERIC=51
+    LT=52
+    LT_EQ=53
+    GT=54
+    GT_EQ=55
+    EQ=56
+    NOT_EQ1=57
+    LT2=58
+    GT2=59
+    EQ2=60
+    NOT_EQ2=61
+    PLUS=62
+    MINUS=63
+    STAR=64
+    DIV=65
+    MOD=66
+    AMP=67
+    AMP2=68
+    PIPE=69
+    PIPE2=70
+    OPEN_PAR=71
+    CLOSE_PAR=72
+    OPEN_CURLY=73
+    CLOSE_CURLY=74
+    COMMA=75
+    SCOL=76
+    DOT=77
+    TILDE=78
+    DOLLAR=79
+    STRING=80
+    SINGLE_LINE_COMMENT=81
+    MULTI_LINE_COMMENT=82
 
     def __init__(self, input):
         super(cedlParser, self).__init__(input)
-        self.checkVersion("4.5.1")
+        self.checkVersion("4.5.3")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -437,6 +490,7 @@ class cedlParser ( Parser ):
             super(cedlParser.Cedl_eventContext, self).__init__(parent, invokingState)
             self.parser = parser
             self.premitive_events = None
+            self.a = None # Context_clauseContext
 
         def select_clause(self):
             return self.getTypedRuleContext(cedlParser.Select_clauseContext,0)
@@ -524,7 +578,7 @@ class cedlParser ( Parser ):
             _la = self._input.LA(1)
             if _la==cedlParser.CONTEXT:
                 self.state = 91
-                self.context_clause()
+                localctx.a = self.context_clause()
 
 
 
@@ -825,6 +879,7 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_event)
         try:
             self.state = 128
+            self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1031,7 +1086,7 @@ class cedlParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 145
             token = self._input.LA(1)
-            if token in [cedlParser.NOT, cedlParser.REPEAT, cedlParser.WITHIN, cedlParser.INTERVAL, cedlParser.AT]:
+            if token in [cedlParser.AVG, cedlParser.SUM, cedlParser.MINOP, cedlParser.MAX, cedlParser.DEC, cedlParser.INC, cedlParser.NOT, cedlParser.REPEAT, cedlParser.WITHIN, cedlParser.INTERVAL, cedlParser.AT]:
                 self.state = 136
                 localctx.a = self.pattern_event_1()
 
@@ -1069,7 +1124,7 @@ class cedlParser ( Parser ):
                 self.link_operator()
                 self.state = 157
                 token = self._input.LA(1)
-                if token in [cedlParser.NOT, cedlParser.REPEAT, cedlParser.WITHIN, cedlParser.INTERVAL, cedlParser.AT]:
+                if token in [cedlParser.AVG, cedlParser.SUM, cedlParser.MINOP, cedlParser.MAX, cedlParser.DEC, cedlParser.INC, cedlParser.NOT, cedlParser.REPEAT, cedlParser.WITHIN, cedlParser.INTERVAL, cedlParser.AT]:
                     self.state = 148
                     localctx.a = self.pattern_event_1()
 
@@ -1170,6 +1225,7 @@ class cedlParser ( Parser ):
             self.a = None # EventContext
             self.b = None # Repeat_numContext
             self.c = None # Time_unitContext
+            self.d = None # Attr_nameContext
 
         def NOT(self):
             return self.getToken(cedlParser.NOT, 0)
@@ -1226,6 +1282,35 @@ class cedlParser ( Parser ):
             return self.getTypedRuleContext(cedlParser.TimeContext,0)
 
 
+        def AVG(self):
+            return self.getToken(cedlParser.AVG, 0)
+
+        def len_value(self):
+            return self.getTypedRuleContext(cedlParser.Len_valueContext,0)
+
+
+        def attr_name(self, i=None):
+            if i is None:
+                return self.getTypedRuleContexts(cedlParser.Attr_nameContext)
+            else:
+                return self.getTypedRuleContext(cedlParser.Attr_nameContext,i)
+
+
+        def SUM(self):
+            return self.getToken(cedlParser.SUM, 0)
+
+        def MINOP(self):
+            return self.getToken(cedlParser.MINOP, 0)
+
+        def MAX(self):
+            return self.getToken(cedlParser.MAX, 0)
+
+        def DEC(self):
+            return self.getToken(cedlParser.DEC, 0)
+
+        def INC(self):
+            return self.getToken(cedlParser.INC, 0)
+
         def getRuleIndex(self):
             return cedlParser.RULE_pattern_event_1
 
@@ -1251,7 +1336,7 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Pattern_event_1Context(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_pattern_event_1)
         try:
-            self.state = 218
+            self.state = 296
             token = self._input.LA(1)
             if token in [cedlParser.NOT]:
                 self.enterOuterAlt(localctx, 1)
@@ -1375,6 +1460,186 @@ class cedlParser ( Parser ):
                 localctx.a.node.father.append(localctx.node)
 
 
+            elif token in [cedlParser.AVG]:
+                self.enterOuterAlt(localctx, 6)
+                self.state = 218
+                self.match(cedlParser.AVG)
+                self.state = 219
+                self.match(cedlParser.OPEN_PAR)
+                self.state = 220
+                localctx.a = self.event()
+                self.state = 221
+                self.match(cedlParser.COMMA)
+                self.state = 222
+                localctx.b = self.len_value()
+                self.state = 223
+                self.match(cedlParser.COMMA)
+                self.state = 224
+                localctx.c = self.attr_name()
+                self.state = 225
+                self.match(cedlParser.COMMA)
+                self.state = 226
+                localctx.d = self.attr_name()
+                self.state = 227
+                self.match(cedlParser.CLOSE_PAR)
+
+                localctx.node = aggregationNode(str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))),'avg',str((None if localctx.b is None else self._input.getText((localctx.b.start,localctx.b.stop)))),str((None if localctx.c is None else self._input.getText((localctx.c.start,localctx.c.stop)))),str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))))
+                localctx.node.addChildren(localctx.a.node)
+                localctx.a.node.father.append(localctx.node)
+
+                premitive_events[str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop))))] = localctx.node
+
+
+            elif token in [cedlParser.SUM]:
+                self.enterOuterAlt(localctx, 7)
+                self.state = 231
+                self.match(cedlParser.SUM)
+                self.state = 232
+                self.match(cedlParser.OPEN_PAR)
+                self.state = 233
+                localctx.a = self.event()
+                self.state = 234
+                self.match(cedlParser.COMMA)
+                self.state = 235
+                localctx.b = self.len_value()
+                self.state = 236
+                self.match(cedlParser.COMMA)
+                self.state = 237
+                localctx.c = self.attr_name()
+                self.state = 238
+                self.match(cedlParser.COMMA)
+                self.state = 239
+                localctx.d = self.attr_name()
+                self.state = 240
+                self.match(cedlParser.CLOSE_PAR)
+
+                localctx.node = aggregationNode(str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))),'sum',(None if localctx.b is None else self._input.getText((localctx.b.start,localctx.b.stop))),(None if localctx.c is None else self._input.getText((localctx.c.start,localctx.c.stop))),str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))))
+                localctx.node.addChildren(localctx.a.node)
+                localctx.a.node.father.append(localctx.node)
+
+                premitive_events[str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop))))] = localctx.node
+
+
+            elif token in [cedlParser.MINOP]:
+                self.enterOuterAlt(localctx, 8)
+                self.state = 244
+                self.match(cedlParser.MINOP)
+                self.state = 245
+                self.match(cedlParser.OPEN_PAR)
+                self.state = 246
+                localctx.a = self.event()
+                self.state = 247
+                self.match(cedlParser.COMMA)
+                self.state = 248
+                localctx.b = self.len_value()
+                self.state = 249
+                self.match(cedlParser.COMMA)
+                self.state = 250
+                localctx.c = self.attr_name()
+                self.state = 251
+                self.match(cedlParser.COMMA)
+                self.state = 252
+                localctx.d = self.attr_name()
+                self.state = 253
+                self.match(cedlParser.CLOSE_PAR)
+
+                localctx.node = aggregationNode(str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))),'min',(None if localctx.b is None else self._input.getText((localctx.b.start,localctx.b.stop))),(None if localctx.c is None else self._input.getText((localctx.c.start,localctx.c.stop))),str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))))
+                localctx.node.addChildren(localctx.a.node)
+                localctx.a.node.father.append(localctx.node)
+
+                premitive_events[str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop))))] = localctx.node
+
+
+            elif token in [cedlParser.MAX]:
+                self.enterOuterAlt(localctx, 9)
+                self.state = 257
+                self.match(cedlParser.MAX)
+                self.state = 258
+                self.match(cedlParser.OPEN_PAR)
+                self.state = 259
+                localctx.a = self.event()
+                self.state = 260
+                self.match(cedlParser.COMMA)
+                self.state = 261
+                localctx.b = self.len_value()
+                self.state = 262
+                self.match(cedlParser.COMMA)
+                self.state = 263
+                localctx.c = self.attr_name()
+                self.state = 264
+                self.match(cedlParser.COMMA)
+                self.state = 265
+                localctx.d = self.attr_name()
+                self.state = 266
+                self.match(cedlParser.CLOSE_PAR)
+
+                localctx.node = aggregationNode(str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))),'max',(None if localctx.b is None else self._input.getText((localctx.b.start,localctx.b.stop))),(None if localctx.c is None else self._input.getText((localctx.c.start,localctx.c.stop))),str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))))
+                localctx.node.addChildren(localctx.a.node)
+                localctx.a.node.father.append(localctx.node)
+
+                premitive_events[str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop))))] = localctx.node
+
+
+            elif token in [cedlParser.DEC]:
+                self.enterOuterAlt(localctx, 10)
+                self.state = 270
+                self.match(cedlParser.DEC)
+                self.state = 271
+                self.match(cedlParser.OPEN_PAR)
+                self.state = 272
+                localctx.a = self.event()
+                self.state = 273
+                self.match(cedlParser.COMMA)
+                self.state = 274
+                localctx.b = self.len_value()
+                self.state = 275
+                self.match(cedlParser.COMMA)
+                self.state = 276
+                localctx.c = self.attr_name()
+                self.state = 277
+                self.match(cedlParser.COMMA)
+                self.state = 278
+                localctx.d = self.attr_name()
+                self.state = 279
+                self.match(cedlParser.CLOSE_PAR)
+
+                localctx.node = aggregationNode(str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))),'dec',(None if localctx.b is None else self._input.getText((localctx.b.start,localctx.b.stop))),(None if localctx.c is None else self._input.getText((localctx.c.start,localctx.c.stop))),str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))))
+                localctx.node.addChildren(localctx.a.node)
+                localctx.a.node.father.append(localctx.node)
+
+                premitive_events[str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop))))] = localctx.node
+
+
+            elif token in [cedlParser.INC]:
+                self.enterOuterAlt(localctx, 11)
+                self.state = 283
+                self.match(cedlParser.INC)
+                self.state = 284
+                self.match(cedlParser.OPEN_PAR)
+                self.state = 285
+                localctx.a = self.event()
+                self.state = 286
+                self.match(cedlParser.COMMA)
+                self.state = 287
+                localctx.b = self.len_value()
+                self.state = 288
+                self.match(cedlParser.COMMA)
+                self.state = 289
+                localctx.c = self.attr_name()
+                self.state = 290
+                self.match(cedlParser.COMMA)
+                self.state = 291
+                localctx.d = self.attr_name()
+                self.state = 292
+                self.match(cedlParser.CLOSE_PAR)
+
+                localctx.node = aggregationNode(str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))),'inc',(None if localctx.b is None else self._input.getText((localctx.b.start,localctx.b.stop))),(None if localctx.c is None else self._input.getText((localctx.c.start,localctx.c.stop))),str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop)))))
+                localctx.node.addChildren(localctx.a.node)
+                localctx.a.node.father.append(localctx.node)
+
+                premitive_events[str((None if localctx.d is None else self._input.getText((localctx.d.start,localctx.d.stop))))] = localctx.node
+
+
             else:
                 raise NoViableAltException(self)
 
@@ -1421,7 +1686,7 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 24, self.RULE_time)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 220
+            self.state = 298
             self.match(cedlParser.TIME_COMPLETE)
         except RecognitionException as re:
             localctx.exception = re
@@ -1467,7 +1732,7 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_time_start)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 222
+            self.state = 300
             self.time()
         except RecognitionException as re:
             localctx.exception = re
@@ -1513,7 +1778,7 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 28, self.RULE_time_end)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 224
+            self.state = 302
             self.time()
         except RecognitionException as re:
             localctx.exception = re
@@ -1579,21 +1844,21 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Pattern_event_2Context(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_pattern_event_2)
         try:
-            self.state = 244
+            self.state = 322
             token = self._input.LA(1)
             if token in [cedlParser.XOR]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 226
+                self.state = 304
                 self.match(cedlParser.XOR)
-                self.state = 227
+                self.state = 305
                 self.match(cedlParser.OPEN_PAR)
-                self.state = 228
+                self.state = 306
                 localctx.a = self.event()
-                self.state = 229
+                self.state = 307
                 self.match(cedlParser.COMMA)
-                self.state = 230
+                self.state = 308
                 localctx.b = self.event()
-                self.state = 231
+                self.state = 309
                 self.match(cedlParser.CLOSE_PAR)
 
                 localctx.node = eType_node('xor','xor')
@@ -1605,17 +1870,17 @@ class cedlParser ( Parser ):
 
             elif token in [cedlParser.DURING]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 235
+                self.state = 313
                 self.match(cedlParser.DURING)
-                self.state = 236
+                self.state = 314
                 self.match(cedlParser.OPEN_PAR)
-                self.state = 237
+                self.state = 315
                 localctx.a = self.event()
-                self.state = 238
+                self.state = 316
                 self.match(cedlParser.COMMA)
-                self.state = 239
+                self.state = 317
                 localctx.b = self.event()
-                self.state = 240
+                self.state = 318
                 self.match(cedlParser.CLOSE_PAR)
 
                 localctx.node = eType_node('during','during')
@@ -1703,18 +1968,18 @@ class cedlParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 246
+            self.state = 324
             localctx.a = self._input.LT(1)
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << cedlParser.AND) | (1 << cedlParser.OR) | (1 << cedlParser.NAND) | (1 << cedlParser.NOR) | (1 << cedlParser.SEQ) | (1 << cedlParser.FOLLOWBY) | (1 << cedlParser.EQUAL))) != 0)):
                 localctx.a = self._errHandler.recoverInline(self)
             else:
                 self.consume()
-            self.state = 247
+            self.state = 325
             self.match(cedlParser.OPEN_PAR)
-            self.state = 248
+            self.state = 326
             localctx.b = self.event_list()
-            self.state = 249
+            self.state = 327
             self.match(cedlParser.CLOSE_PAR)
 
             localctx.node = eType_node((None if localctx.a is None else localctx.a.text),(None if localctx.a is None else localctx.a.text))
@@ -1769,9 +2034,9 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 34, self.RULE_limit_clause)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 252
+            self.state = 330
             self.match(cedlParser.LIMIT)
-            self.state = 253
+            self.state = 331
             self.filters()
         except RecognitionException as re:
             localctx.exception = re
@@ -1829,7 +2094,7 @@ class cedlParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 255
+            self.state = 333
             localctx.a = self.limit_filter()
 
             i=0
@@ -1839,13 +2104,13 @@ class cedlParser ( Parser ):
             localctx.nodes.append(node)
             i+=1
 
-            self.state = 263
+            self.state = 341
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==cedlParser.AND:
-                self.state = 257
+                self.state = 335
                 self.match(cedlParser.AND)
-                self.state = 258
+                self.state = 336
                 localctx.a = self.limit_filter()
 
                 node = attach_node(i)
@@ -1853,7 +2118,7 @@ class cedlParser ( Parser ):
                 localctx.nodes.append(node)
                 i+=1
 
-                self.state = 265
+                self.state = 343
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1946,46 +2211,47 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Limit_filterContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_limit_filter)
         try:
-            self.state = 318
+            self.state = 396
+            self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 266
+                self.state = 344
                 localctx.e = self.premitive_event()
-                self.state = 267
+                self.state = 345
                 self.match(cedlParser.DOT)
-                self.state = 268
+                self.state = 346
                 localctx.attr = self.attr_name()
-                self.state = 269
+                self.state = 347
                 localctx.op = self.filter_operator()
-                self.state = 270
+                self.state = 348
                 localctx.v = self.filter_value()
 
                 localctx.dic = {}
-                localctx.dic['op']= localctx.op.op
-                localctx.dic['event_name']=(None if localctx.e is None else self._input.getText((localctx.e.start,localctx.e.stop)))
-                localctx.dic['event_attr']=(None if localctx.attr is None else self._input.getText((localctx.attr.start,localctx.attr.stop)))
+                localctx.dic['op']= str(localctx.op.op)
+                localctx.dic['event_name']=str((None if localctx.e is None else self._input.getText((localctx.e.start,localctx.e.stop))))
+                localctx.dic['event_attr']=str((None if localctx.attr is None else self._input.getText((localctx.attr.start,localctx.attr.stop))))
                 localctx.dic['value']=localctx.v.v
 
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 274
+                self.state = 352
                 localctx.e = self.premitive_event()
-                self.state = 275
+                self.state = 353
                 self.match(cedlParser.DOT)
-                self.state = 276
+                self.state = 354
                 localctx.attr = self.attr_name()
-                self.state = 277
+                self.state = 355
                 self.match(cedlParser.DOT)
-                self.state = 278
+                self.state = 356
                 localctx.fun = self.match(cedlParser.CONTAINS)
-                self.state = 279
+                self.state = 357
                 self.match(cedlParser.OPEN_PAR)
-                self.state = 280
+                self.state = 358
                 localctx.v_str = self.match(cedlParser.STRING)
-                self.state = 281
+                self.state = 359
                 self.match(cedlParser.CLOSE_PAR)
 
                 localctx.dic = {}
@@ -1998,21 +2264,21 @@ class cedlParser ( Parser ):
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 285
+                self.state = 363
                 localctx.e = self.premitive_event()
-                self.state = 286
+                self.state = 364
                 self.match(cedlParser.DOT)
-                self.state = 287
+                self.state = 365
                 localctx.attr = self.attr_name()
-                self.state = 288
+                self.state = 366
                 self.match(cedlParser.DOT)
-                self.state = 289
+                self.state = 367
                 localctx.fun = self.match(cedlParser.EQUALS)
-                self.state = 290
+                self.state = 368
                 self.match(cedlParser.OPEN_PAR)
-                self.state = 291
+                self.state = 369
                 localctx.v_str = self.match(cedlParser.STRING)
-                self.state = 292
+                self.state = 370
                 self.match(cedlParser.CLOSE_PAR)
 
                 localctx.dic = {}
@@ -2025,21 +2291,21 @@ class cedlParser ( Parser ):
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 296
+                self.state = 374
                 localctx.e = self.premitive_event()
-                self.state = 297
+                self.state = 375
                 self.match(cedlParser.DOT)
-                self.state = 298
+                self.state = 376
                 localctx.attr = self.attr_name()
-                self.state = 299
+                self.state = 377
                 self.match(cedlParser.DOT)
-                self.state = 300
+                self.state = 378
                 localctx.fun = self.match(cedlParser.COMPARETO)
-                self.state = 301
+                self.state = 379
                 self.match(cedlParser.OPEN_PAR)
-                self.state = 302
+                self.state = 380
                 localctx.v_str = self.match(cedlParser.STRING)
-                self.state = 303
+                self.state = 381
                 self.match(cedlParser.CLOSE_PAR)
 
                 localctx.dic = {}
@@ -2052,21 +2318,21 @@ class cedlParser ( Parser ):
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 307
+                self.state = 385
                 localctx.e = self.premitive_event()
-                self.state = 308
+                self.state = 386
                 self.match(cedlParser.DOT)
-                self.state = 309
+                self.state = 387
                 localctx.attr = self.attr_name()
-                self.state = 310
+                self.state = 388
                 self.match(cedlParser.DOT)
-                self.state = 311
+                self.state = 389
                 localctx.fun = self.match(cedlParser.MATCHES)
-                self.state = 312
+                self.state = 390
                 self.match(cedlParser.OPEN_PAR)
-                self.state = 313
+                self.state = 391
                 localctx.v_str = self.match(cedlParser.STRING)
-                self.state = 314
+                self.state = 392
                 self.match(cedlParser.CLOSE_PAR)
 
                 localctx.dic = {}
@@ -2142,7 +2408,7 @@ class cedlParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 320
+            self.state = 398
             localctx.a = self._input.LT(1)
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << cedlParser.LT) | (1 << cedlParser.LT_EQ) | (1 << cedlParser.GT) | (1 << cedlParser.GT_EQ) | (1 << cedlParser.EQ) | (1 << cedlParser.NOT_EQ1) | (1 << cedlParser.NOT_EQ2))) != 0)):
@@ -2225,31 +2491,32 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Filter_valueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 42, self.RULE_filter_value)
         try:
-            self.state = 342
+            self.state = 420
+            self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 323
+                self.state = 401
                 self.match(cedlParser.TRUE)
                 localctx.v = True
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 325
+                self.state = 403
                 self.match(cedlParser.FALSE)
                 localctx.v = False
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 327
+                self.state = 405
                 self.match(cedlParser.DOLLAR)
-                self.state = 328
+                self.state = 406
                 localctx.a = self.premitive_event()
-                self.state = 329
+                self.state = 407
                 self.match(cedlParser.DOT)
-                self.state = 330
+                self.state = 408
                 localctx.b = self.attr_name()
 
                 localctx.v = {}
@@ -2260,21 +2527,21 @@ class cedlParser ( Parser ):
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 334
+                self.state = 412
                 localctx.c = self.value_num()
                 localctx.v = (None if localctx.c is None else self._input.getText((localctx.c.start,localctx.c.stop)))
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 337
+                self.state = 415
                 localctx.c = self.value_numeric()
                 localctx.v = (None if localctx.c is None else self._input.getText((localctx.c.start,localctx.c.stop)))
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 340
+                self.state = 418
                 localctx.d = self.match(cedlParser.STRING)
                 localctx.v = str((None if localctx.d is None else localctx.d.text))
                 pass
@@ -2331,11 +2598,11 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 44, self.RULE_time_clause)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 344
+            self.state = 422
             self.match(cedlParser.TIMEWINDOW)
-            self.state = 345
+            self.state = 423
             self.time_value()
-            self.state = 346
+            self.state = 424
             self.time_unit()
         except RecognitionException as re:
             localctx.exception = re
@@ -2384,9 +2651,9 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 46, self.RULE_len_clause)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 348
+            self.state = 426
             self.match(cedlParser.LENWINDOW)
-            self.state = 349
+            self.state = 427
             self.len_value()
         except RecognitionException as re:
             localctx.exception = re
@@ -2401,6 +2668,8 @@ class cedlParser ( Parser ):
         def __init__(self, parser, parent=None, invokingState=-1):
             super(cedlParser.Context_clauseContext, self).__init__(parent, invokingState)
             self.parser = parser
+            self.context = None
+            self.a = None # Context_valueContext
 
         def CONTEXT(self):
             return self.getToken(cedlParser.CONTEXT, 0)
@@ -2435,10 +2704,11 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 48, self.RULE_context_clause)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 351
+            self.state = 429
             self.match(cedlParser.CONTEXT)
-            self.state = 352
-            self.context_value()
+            self.state = 430
+            localctx.a = self.context_value()
+            localctx.context=(None if localctx.a is None else self._input.getText((localctx.a.start,localctx.a.stop)))
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2452,6 +2722,7 @@ class cedlParser ( Parser ):
         def __init__(self, parser, parent=None, invokingState=-1):
             super(cedlParser.Context_valueContext, self).__init__(parent, invokingState)
             self.parser = parser
+            self.contextValue = None
 
         def CHRONICLE(self):
             return self.getToken(cedlParser.CHRONICLE, 0)
@@ -2489,15 +2760,36 @@ class cedlParser ( Parser ):
 
         localctx = cedlParser.Context_valueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 50, self.RULE_context_value)
-        self._la = 0 # Token type
         try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 354
-            _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << cedlParser.CHRONICLE) | (1 << cedlParser.RECENT) | (1 << cedlParser.CONTINUOUS) | (1 << cedlParser.CUMULATIVE))) != 0)):
-                self._errHandler.recoverInline(self)
+            self.state = 441
+            token = self._input.LA(1)
+            if token in [cedlParser.CHRONICLE]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 433
+                self.match(cedlParser.CHRONICLE)
+                localctx.contextValue='chronicle'
+
+            elif token in [cedlParser.RECENT]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 435
+                self.match(cedlParser.RECENT)
+                localctx.contextValue='recent'
+
+            elif token in [cedlParser.CONTINUOUS]:
+                self.enterOuterAlt(localctx, 3)
+                self.state = 437
+                self.match(cedlParser.CONTINUOUS)
+                localctx.contextValue='recent'
+
+            elif token in [cedlParser.CUMULATIVE]:
+                self.enterOuterAlt(localctx, 4)
+                self.state = 439
+                self.match(cedlParser.CUMULATIVE)
+                localctx.contextValue='cumulative'
+
             else:
-                self.consume()
+                raise NoViableAltException(self)
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2544,16 +2836,16 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Atom_event_nameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 52, self.RULE_atom_event_name)
         try:
-            self.state = 358
+            self.state = 445
             token = self._input.LA(1)
             if token in [cedlParser.IDENTIFLER]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 356
+                self.state = 443
                 self.match(cedlParser.IDENTIFLER)
 
             elif token in [cedlParser.TRUE, cedlParser.FALSE, cedlParser.SELECT, cedlParser.DEFINE, cedlParser.FROM, cedlParser.PATTERN, cedlParser.LIMIT, cedlParser.TIMEWINDOW, cedlParser.LENWINDOW, cedlParser.CONTEXT, cedlParser.CHRONICLE, cedlParser.RECENT, cedlParser.CONTINUOUS, cedlParser.CUMULATIVE, cedlParser.AND, cedlParser.OR, cedlParser.NOT, cedlParser.XOR, cedlParser.NAND, cedlParser.NOR, cedlParser.REPEAT, cedlParser.SEQ, cedlParser.WITHIN, cedlParser.FOLLOWBY, cedlParser.DURING, cedlParser.EQUAL, cedlParser.INTERVAL, cedlParser.AT, cedlParser.CONTAINS, cedlParser.COMPARETO, cedlParser.EQUALS, cedlParser.MATCHES, cedlParser.TIME_UNIT]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 357
+                self.state = 444
                 self.string_key()
 
             else:
@@ -2605,16 +2897,16 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Complex_event_nameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 54, self.RULE_complex_event_name)
         try:
-            self.state = 362
+            self.state = 449
             token = self._input.LA(1)
             if token in [cedlParser.IDENTIFLER]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 360
+                self.state = 447
                 self.match(cedlParser.IDENTIFLER)
 
             elif token in [cedlParser.TRUE, cedlParser.FALSE, cedlParser.SELECT, cedlParser.DEFINE, cedlParser.FROM, cedlParser.PATTERN, cedlParser.LIMIT, cedlParser.TIMEWINDOW, cedlParser.LENWINDOW, cedlParser.CONTEXT, cedlParser.CHRONICLE, cedlParser.RECENT, cedlParser.CONTINUOUS, cedlParser.CUMULATIVE, cedlParser.AND, cedlParser.OR, cedlParser.NOT, cedlParser.XOR, cedlParser.NAND, cedlParser.NOR, cedlParser.REPEAT, cedlParser.SEQ, cedlParser.WITHIN, cedlParser.FOLLOWBY, cedlParser.DURING, cedlParser.EQUAL, cedlParser.INTERVAL, cedlParser.AT, cedlParser.CONTAINS, cedlParser.COMPARETO, cedlParser.EQUALS, cedlParser.MATCHES, cedlParser.TIME_UNIT]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 361
+                self.state = 448
                 self.string_key()
 
             else:
@@ -2666,16 +2958,16 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Attr_nameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 56, self.RULE_attr_name)
         try:
-            self.state = 366
+            self.state = 453
             token = self._input.LA(1)
             if token in [cedlParser.IDENTIFLER]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 364
+                self.state = 451
                 self.match(cedlParser.IDENTIFLER)
 
             elif token in [cedlParser.TRUE, cedlParser.FALSE, cedlParser.SELECT, cedlParser.DEFINE, cedlParser.FROM, cedlParser.PATTERN, cedlParser.LIMIT, cedlParser.TIMEWINDOW, cedlParser.LENWINDOW, cedlParser.CONTEXT, cedlParser.CHRONICLE, cedlParser.RECENT, cedlParser.CONTINUOUS, cedlParser.CUMULATIVE, cedlParser.AND, cedlParser.OR, cedlParser.NOT, cedlParser.XOR, cedlParser.NAND, cedlParser.NOR, cedlParser.REPEAT, cedlParser.SEQ, cedlParser.WITHIN, cedlParser.FOLLOWBY, cedlParser.DURING, cedlParser.EQUAL, cedlParser.INTERVAL, cedlParser.AT, cedlParser.CONTAINS, cedlParser.COMPARETO, cedlParser.EQUALS, cedlParser.MATCHES, cedlParser.TIME_UNIT]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 365
+                self.state = 452
                 self.string_key()
 
             else:
@@ -2727,16 +3019,16 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Time_valueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 58, self.RULE_time_value)
         try:
-            self.state = 370
+            self.state = 457
             token = self._input.LA(1)
             if token in [cedlParser.INT]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 368
+                self.state = 455
                 self.match(cedlParser.INT)
 
             elif token in [cedlParser.YEAR, cedlParser.MON, cedlParser.DAY, cedlParser.HOUR, cedlParser.MIN, cedlParser.SEC]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 369
+                self.state = 456
                 self.num_key()
 
             else:
@@ -2788,16 +3080,16 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Len_valueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 60, self.RULE_len_value)
         try:
-            self.state = 374
+            self.state = 461
             token = self._input.LA(1)
             if token in [cedlParser.INT]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 372
+                self.state = 459
                 self.match(cedlParser.INT)
 
             elif token in [cedlParser.YEAR, cedlParser.MON, cedlParser.DAY, cedlParser.HOUR, cedlParser.MIN, cedlParser.SEC]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 373
+                self.state = 460
                 self.num_key()
 
             else:
@@ -2850,17 +3142,18 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Repeat_numContext(self, self._ctx, self.state)
         self.enterRule(localctx, 62, self.RULE_repeat_num)
         try:
-            self.state = 378
-            la_ = self._interp.adaptivePredict(self._input,20,self._ctx)
+            self.state = 465
+            self._errHandler.sync(self);
+            la_ = self._interp.adaptivePredict(self._input,21,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 376
+                self.state = 463
                 self.time_value()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 377
+                self.state = 464
                 self.len_value()
                 pass
 
@@ -2909,7 +3202,7 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 64, self.RULE_value_num)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 380
+            self.state = 467
             self.repeat_num()
         except RecognitionException as re:
             localctx.exception = re
@@ -2957,16 +3250,16 @@ class cedlParser ( Parser ):
         localctx = cedlParser.Value_numericContext(self, self._ctx, self.state)
         self.enterRule(localctx, 66, self.RULE_value_numeric)
         try:
-            self.state = 384
+            self.state = 471
             token = self._input.LA(1)
             if token in [cedlParser.NUMERIC]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 382
+                self.state = 469
                 self.match(cedlParser.NUMERIC)
 
             elif token in [cedlParser.YEAR, cedlParser.MON, cedlParser.DAY, cedlParser.HOUR, cedlParser.MIN, cedlParser.SEC, cedlParser.INT]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 383
+                self.state = 470
                 self.value_num()
 
             else:
@@ -3015,7 +3308,7 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 68, self.RULE_time_unit)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 386
+            self.state = 473
             self.match(cedlParser.TIME_UNIT)
         except RecognitionException as re:
             localctx.exception = re
@@ -3060,7 +3353,7 @@ class cedlParser ( Parser ):
         self.enterRule(localctx, 70, self.RULE_numeric)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 388
+            self.state = 475
             self.match(cedlParser.NUMERIC)
         except RecognitionException as re:
             localctx.exception = re
@@ -3202,7 +3495,7 @@ class cedlParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 390
+            self.state = 477
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << cedlParser.TRUE) | (1 << cedlParser.FALSE) | (1 << cedlParser.SELECT) | (1 << cedlParser.DEFINE) | (1 << cedlParser.FROM) | (1 << cedlParser.PATTERN) | (1 << cedlParser.LIMIT) | (1 << cedlParser.TIMEWINDOW) | (1 << cedlParser.LENWINDOW) | (1 << cedlParser.CONTEXT) | (1 << cedlParser.CHRONICLE) | (1 << cedlParser.RECENT) | (1 << cedlParser.CONTINUOUS) | (1 << cedlParser.CUMULATIVE) | (1 << cedlParser.AND) | (1 << cedlParser.OR) | (1 << cedlParser.NOT) | (1 << cedlParser.XOR) | (1 << cedlParser.NAND) | (1 << cedlParser.NOR) | (1 << cedlParser.REPEAT) | (1 << cedlParser.SEQ) | (1 << cedlParser.WITHIN) | (1 << cedlParser.FOLLOWBY) | (1 << cedlParser.DURING) | (1 << cedlParser.EQUAL) | (1 << cedlParser.INTERVAL) | (1 << cedlParser.AT) | (1 << cedlParser.CONTAINS) | (1 << cedlParser.COMPARETO) | (1 << cedlParser.EQUALS) | (1 << cedlParser.MATCHES) | (1 << cedlParser.TIME_UNIT))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -3267,7 +3560,7 @@ class cedlParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 392
+            self.state = 479
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << cedlParser.YEAR) | (1 << cedlParser.MON) | (1 << cedlParser.DAY) | (1 << cedlParser.HOUR) | (1 << cedlParser.MIN) | (1 << cedlParser.SEC))) != 0)):
                 self._errHandler.recoverInline(self)
